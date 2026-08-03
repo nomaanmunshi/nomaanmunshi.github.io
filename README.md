@@ -1,55 +1,53 @@
-# Nomaan Munshi — Portfolio
+# Nomaan Munshi | Portfolio
 
-A responsive GitHub Pages portfolio built with plain HTML, CSS and JavaScript.
+A responsive personal portfolio website built with HTML, CSS and JavaScript.
 
-## What is included
+The website presents my academic background, technical skills, selected coursework, software projects and current engineering focus.
 
-- Correct degree title: Bachelor's in Information and Communications Engineering
-- University of Trento information
-- Real GitHub avatar loaded from Nomaan's GitHub profile
+## Live Website
+
+[nomannn13.github.io](https://nomannn13.github.io/)
+
+## About
+
+I am pursuing a Bachelor's degree in Information and Communications Engineering at the University of Trento, Italy.
+
+My current focus is software engineering, backend development, programming fundamentals and building practical applications with Java, Spring Boot, C++, Python, SQL and modern web technologies.
+
+## Main Features
+
+- Responsive desktop and mobile layout
 - Dark and light themes
-- Pistachio green, off-white, black and restrained orange palette
-- Cursor-follow spotlight on cards
-- Lenis inertial scrolling
+- Smooth inertial scrolling
 - GSAP ScrollTrigger animations
-- Subtle parallax and magnetic hover interactions
-- Responsive mobile navigation
-- Honest project status labels
+- Subtle parallax effects
+- Cursor-aware card lighting
+- Project and coursework sections
+- Accessible navigation
+- Reduced-motion support
 
-## Run locally
+## Technologies Used
 
-Open `index.html` directly, or use a local server:
+- HTML
+- CSS
+- JavaScript
+- GSAP
+- Lenis
+- GitHub Pages
+
+## Focus Areas
+
+- Software engineering
+- Backend development
+- Java and Spring Boot
+- REST APIs
+- SQL and database-backed applications
+- C++ problem solving and data structures
+- React and TypeScript
+
+## Run Locally
+
+Clone the repository:
 
 ```bash
-python3 -m http.server 8080
-```
-
-Then visit `http://localhost:8080`.
-
-## Publish on GitHub Pages
-
-1. Create a public repository, for example `portfolio`.
-2. Upload all files from this folder.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main` and `/root`.
-6. Save.
-
-The website will appear at:
-
-```text
-https://nomannn13.github.io/portfolio/
-```
-
-For the root address `https://nomannn13.github.io/`, name the repository exactly:
-
-```text
-nomannn13.github.io
-```
-
-## Before publishing
-
-- Replace or refine project descriptions when repositories are ready.
-- Add confirmed GitHub repository links to each project card.
-- Add LinkedIn only after inserting the correct profile URL.
-- Add a CV button only when a current PDF is ready.
+git clone https://github.com/nomannn13/nomannn13.github.io.git
