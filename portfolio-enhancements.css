@@ -286,25 +286,16 @@
     linear-gradient(135deg, color-mix(in srgb, var(--surface) 90%, var(--pista) 10%), var(--surface));
 }
 
-.credential-card-featured::before {
-  content: "36 pages";
-  position: absolute;
-  top: clamp(24px, 4vw, 42px);
-  right: clamp(24px, 4vw, 42px);
-  z-index: 1;
-  padding: 8px 12px;
-  border: 1px solid color-mix(in srgb, var(--pista) 45%, var(--line));
-  border-radius: 999px;
-  color: var(--pista-deep);
-  font-size: .72rem;
-  font-weight: 750;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+
+.credential-card-featured {
+  padding: clamp(52px, 5vw, 72px);
 }
 
 .credential-card-featured h3 {
-  max-width: 900px;
-  font-size: clamp(3.25rem, 7vw, 6.6rem);
+  max-width: 780px;
+  margin: 18px 0 16px;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: .9;
 }
 
 .credential-card-featured p {
@@ -315,6 +306,3 @@
   .credential-card-featured { grid-column: auto; min-height: 360px; }
 }
 
-@media (max-width: 560px) {
-  .credential-card-featured::before { display: none; }
-}

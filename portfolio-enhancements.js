@@ -24,7 +24,7 @@
 
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "portfolio-enhancements.css?v=20260803-4";
+    link.href = "portfolio-enhancements.css?v=20260803-5";
     document.head.appendChild(link);
   }
 
