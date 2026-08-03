@@ -16,6 +16,8 @@
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
   <header class="site-header">
     <a class="brand magnetic" href="#top" aria-label="Nomaan Munshi home">
@@ -83,7 +85,6 @@
         <div class="hero-meta reveal">
           <span>University of Trento</span>
           <span>Backend development</span>
-          <span>Open to internships</span>
         </div>
       </div>
 
@@ -150,10 +151,22 @@
       </div>
 
       <div class="about-grid">
-                  <div class="signature-mark" aria-label="Nomaan Munshi signature">
-            <img class="signature-image" src="assets/nomaan-signature.png" alt="Nomaan Munshi signature" />
-          </div>
-        
+        <article class="about-main spotlight-card reveal-card">
+          <p class="large-copy">
+            I’m developing into a software engineer through a mix of university fundamentals,
+            backend projects and consistent problem-solving practice.
+          </p>
+          <p>
+            My degree combines computing, communications and engineering. Outside university,
+            I’m strengthening Java backend development, C++ data structures and algorithms,
+            databases, testing and the core computer-science subjects that matter in real interviews.
+          </p>
+          <div
+            class="about-signature"
+            role="img"
+            aria-label="Nomaan Munshi signature"
+          ></div>
+        </article>
 
         <article class="fact-card spotlight-card reveal-card">
           <span class="fact-label">Degree</span>
@@ -181,57 +194,68 @@
           <span class="section-number">02</span>
           <div>
             <p class="kicker">Skills</p>
-            <h2>What I work with,<br><em>grouped by purpose.</em></h2>
+            <h2>Tools I’m using,<br><em>not a wall of logos.</em></h2>
           </div>
           <p class="section-aside">
-            Technologies used across coursework and projects, organised by their role in a system—not by subjective percentage scores.
+            Hover a card. The light follows your cursor without turning the page into a gaming dashboard.
           </p>
         </div>
 
-        <div class="skills-grid skills-grid-grouped">
-          <article class="skill-card skill-group spotlight-card">
-            <div class="skill-top"><span class="skill-index">01</span><span>Server-side development</span></div>
-            <h3>Backend & APIs</h3>
-            <p>Structured backend applications, REST endpoints, authentication flows, validation and tested service logic.</p>
-            <div class="skill-tags">
-              <span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>Spring Security</span><span>JWT</span><span>JUnit</span><span>Mockito</span>
-            </div>
+        <div class="skills-grid">
+          <article class="skill-card spotlight-card" data-level="Core language">
+            <div class="skill-top"><span class="skill-index">01</span><span>Backend</span></div>
+            <h3>Java</h3>
+            <p>Object-oriented programming, collections, exceptions, APIs and application structure.</p>
+            <div class="skill-footer"><span>Current strength</span><i style="--progress: 74%"></i></div>
           </article>
 
-          <article class="skill-card skill-group spotlight-card">
-            <div class="skill-top"><span class="skill-index">02</span><span>Persistence</span></div>
-            <h3>Databases & Caching</h3>
-            <p>Relational modelling, query design and connecting application logic to persistent and cached data.</p>
-            <div class="skill-tags">
-              <span>SQL</span><span>MySQL</span><span>Redis</span><span>JPA / Hibernate</span><span>Schema Design</span>
-            </div>
+          <article class="skill-card spotlight-card" data-level="Developing">
+            <div class="skill-top"><span class="skill-index">02</span><span>Framework</span></div>
+            <h3>Spring Boot</h3>
+            <p>REST APIs, dependency injection, persistence, validation and application configuration.</p>
+            <div class="skill-footer"><span>Actively improving</span><i style="--progress: 57%"></i></div>
           </article>
 
-          <article class="skill-card skill-group spotlight-card">
-            <div class="skill-top"><span class="skill-index">03</span><span>Client-side development</span></div>
-            <h3>Frontend</h3>
-            <p>Responsive interfaces that consume backend services and keep application flows clear for users.</p>
-            <div class="skill-tags">
-              <span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
-            </div>
+          <article class="skill-card spotlight-card" data-level="DSA language">
+            <div class="skill-top"><span class="skill-index">03</span><span>Problem solving</span></div>
+            <h3>C++</h3>
+            <p>University programming, data structures, algorithms and performance-aware problem solving.</p>
+            <div class="skill-footer"><span>Current focus</span><i style="--progress: 63%"></i></div>
           </article>
 
-          <article class="skill-card skill-group spotlight-card">
-            <div class="skill-top"><span class="skill-index">04</span><span>Workflow & delivery</span></div>
-            <h3>Tools & Infrastructure</h3>
-            <p>Source control, API testing, containers and repeatable development and deployment workflows.</p>
-            <div class="skill-tags">
-              <span>Git</span><span>GitHub</span><span>Docker</span><span>Nginx</span><span>Postman</span><span>GitHub Actions</span>
-            </div>
+          <article class="skill-card spotlight-card" data-level="Comfortable">
+            <div class="skill-top"><span class="skill-index">04</span><span>Automation</span></div>
+            <h3>Python</h3>
+            <p>Scripting, data handling, automation and rapid prototypes for practical tasks.</p>
+            <div class="skill-footer"><span>Comfortable</span><i style="--progress: 60%"></i></div>
           </article>
 
-          <article class="skill-card skill-group skill-group-wide spotlight-card">
-            <div class="skill-top"><span class="skill-index">05</span><span>Programming & foundations</span></div>
-            <h3>Languages & Computer Science</h3>
-            <p>Problem solving and core computing knowledge alongside project work, with attention to what happens below the framework layer.</p>
-            <div class="skill-tags">
-              <span>C++</span><span>Python</span><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>Computer Networks</span><span>Software Engineering</span>
-            </div>
+          <article class="skill-card spotlight-card" data-level="Core">
+            <div class="skill-top"><span class="skill-index">05</span><span>Data</span></div>
+            <h3>SQL & MySQL</h3>
+            <p>Relational modelling, joins, constraints, query design and database-backed applications.</p>
+            <div class="skill-footer"><span>Project use</span><i style="--progress: 67%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Project use">
+            <div class="skill-top"><span class="skill-index">06</span><span>Frontend</span></div>
+            <h3>React & TypeScript</h3>
+            <p>Building clean interfaces that connect to backend services and REST APIs.</p>
+            <div class="skill-footer"><span>Supporting skill</span><i style="--progress: 49%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Workflow">
+            <div class="skill-top"><span class="skill-index">07</span><span>Engineering</span></div>
+            <h3>Git & Testing</h3>
+            <p>Version control, structured commits, unit testing and debugging-oriented development.</p>
+            <div class="skill-footer"><span>Daily workflow</span><i style="--progress: 61%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Learning">
+            <div class="skill-top"><span class="skill-index">08</span><span>Deployment</span></div>
+            <h3>Docker</h3>
+            <p>Containerising development environments and understanding repeatable deployments.</p>
+            <div class="skill-footer"><span>Learning in projects</span><i style="--progress: 43%"></i></div>
           </article>
         </div>
       </div>
@@ -241,116 +265,74 @@
       <div class="section-heading">
         <span class="section-number">03</span>
         <div>
-          <p class="kicker">Projects</p>
-          <h2>Published work &<br><em>the build roadmap.</em></h2>
+          <p class="kicker">Selected work</p>
+          <h2>Projects with honest<br><em>status labels.</em></h2>
         </div>
-        <p class="section-aside">Existing repositories are separated clearly from future builds. No planned project is presented as finished work.</p>
       </div>
 
-      <div class="project-subhead">
-        <span>Published repositories</span>
-        <span>06 projects</span>
-      </div>
-
-      <div class="published-project-grid">
-        <article class="published-project spotlight-card project-large">
-          <div class="project-card-top"><span>01</span><span class="repo-status">Published</span></div>
-          <h3>Synapse HEA Healthcare System</h3>
-          <p>A healthcare workflow platform exploring a Java and Spring Boot backend, React interface, role-based flows and database-backed application design.</p>
-          <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
-          <a href="https://github.com/nomannn13/synapse-hea-healthcare-system" target="_blank" rel="noreferrer">View repository ↗</a>
+      <div class="project-list">
+        <article class="project-row project-featured">
+          <div class="project-number">01</div>
+          <div class="project-copy">
+            <div class="project-status status-built">Built / evolving</div>
+            <h3>Synapse HEA</h3>
+            <p>
+              A healthcare workflow platform built around a Java Spring Boot backend and a React interface.
+              The project explores modular services, role-based workflows, persistence and API-driven application design.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+          </div>
+          <div class="project-art art-one" aria-hidden="true">
+            <div class="ui-window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <div class="side-column"></div>
+                <div class="data-stack"><b></b><b></b><b></b><b></b></div>
+              </div>
+            </div>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
         </article>
 
-        <article class="published-project spotlight-card">
-          <div class="project-card-top"><span>02</span><span class="repo-status">Published</span></div>
-          <h3>Krotoski Łódź Digital Twin</h3>
-          <p>A digital-twin and showroom-operations project using a modern React and TypeScript workflow to represent real business processes.</p>
-          <div class="project-tech"><span>React</span><span>TypeScript</span><span>Digital Twin</span></div>
-          <a href="https://github.com/nomannn13/tac-krotoski-lodz-digital-twin" target="_blank" rel="noreferrer">View repository ↗</a>
+        <article class="project-row">
+          <div class="project-number">02</div>
+          <div class="project-copy">
+            <div class="project-status status-progress">In progress</div>
+            <h3>Payment Orchestration Platform</h3>
+            <p>
+              A backend-focused learning project around payment routing, webhooks, idempotency,
+              retries, reconciliation and failure handling. The goal is depth, not a fake production clone.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>REST</span></div>
+          </div>
+          <div class="project-art art-two" aria-hidden="true">
+            <div class="flow-node n1">API</div>
+            <div class="flow-node n2">ROUTE</div>
+            <div class="flow-node n3">BANK</div>
+            <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+              <path d="M80,110 C140,25 205,25 270,105 S350,185 380,110" />
+            </svg>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
         </article>
 
-        <article class="published-project spotlight-card">
-          <div class="project-card-top"><span>03</span><span class="repo-status">Published</span></div>
-          <h3>Software Engineering University Project</h3>
-          <p>A team-based university software engineering project covering requirements, application flows, authentication and database-backed web development.</p>
-          <div class="project-tech"><span>JavaScript</span><span>Web</span><span>MySQL</span><span>Team Project</span></div>
-          <a href="https://github.com/nomannn13/SOFTWARE-ENGINEERING-UNIVERSITY-PROJECT" target="_blank" rel="noreferrer">View repository ↗</a>
-        </article>
-
-        <article class="published-project spotlight-card">
-          <div class="project-card-top"><span>04</span><span class="repo-status">Published</span></div>
-          <h3>TaskPilot AI</h3>
-          <p>An AI-assisted task and productivity project used to explore practical application structure and intelligent workflow ideas.</p>
-          <div class="project-tech"><span>AI</span><span>Productivity</span><span>Application Design</span></div>
-          <a href="https://github.com/nomannn13/taskpilot-ai" target="_blank" rel="noreferrer">View repository ↗</a>
-        </article>
-
-        <article class="published-project spotlight-card">
-          <div class="project-card-top"><span>05</span><span class="repo-status">Published</span></div>
-          <h3>Product Sales Tracker</h3>
-          <p>A compact Python automation project for recording, processing and reviewing product-sales information.</p>
-          <div class="project-tech"><span>Python</span><span>Automation</span><span>Data Handling</span></div>
-          <a href="https://github.com/nomannn13/product-sales-tracker" target="_blank" rel="noreferrer">View repository ↗</a>
-        </article>
-
-        <article class="published-project spotlight-card">
-          <div class="project-card-top"><span>06</span><span class="repo-status">Phase work</span></div>
-          <h3>Synapse HEA — Java Phase 2</h3>
-          <p>A Java-focused continuation of the Synapse HEA work, separated as a development phase for backend learning and iteration.</p>
-          <div class="project-tech"><span>Java</span><span>Backend</span><span>Iteration</span></div>
-          <a href="https://github.com/nomannn13/synapse-hea-java-phase2" target="_blank" rel="noreferrer">View repository ↗</a>
-        </article>
-      </div>
-
-      <div class="roadmap-head">
-        <div>
-          <p class="kicker">Build roadmap</p>
-          <h3>Target: before January 2027</h3>
-        </div>
-        <p>Personal targets may move around university exams. They are shown as plans, not completed achievements.</p>
-      </div>
-
-      <div class="build-roadmap">
-        <article class="roadmap-card spotlight-card">
-          <span class="roadmap-date">Started</span>
-          <h4>URL Shortener</h4>
-          <p>Compact backend build covering URL mapping, redirects, persistence and API design.</p>
-          <div class="project-tech"><span>Spring Boot</span><span>REST</span><span>SQL</span></div>
-        </article>
-
-        <article class="roadmap-card spotlight-card">
-          <span class="roadmap-date">Started</span>
-          <h4>ZipCart</h4>
-          <p>Course project for strengthening practical full-stack and backend implementation.</p>
-          <div class="project-tech"><span>Java</span><span>Spring</span><span>Web</span></div>
-        </article>
-
-        <article class="roadmap-card spotlight-card roadmap-accent">
-          <span class="roadmap-date">September 2026</span>
-          <h4>Payment Orchestration Platform</h4>
-          <p>Payments, retries, webhooks, idempotency, reconciliation and resilient failure handling.</p>
-          <div class="project-tech"><span>Spring Boot</span><span>Kafka</span><span>Webhooks</span><span>Resilience4j</span></div>
-        </article>
-
-        <article class="roadmap-card spotlight-card">
-          <span class="roadmap-date">Q4 2026</span>
-          <h4>Student AI Chat Platform</h4>
-          <p>Streaming conversations, document retrieval and a clear student-oriented workflow.</p>
-          <div class="project-tech"><span>Spring AI</span><span>SSE</span><span>RAG</span><span>Vector DB</span></div>
-        </article>
-
-        <article class="roadmap-card spotlight-card">
-          <span class="roadmap-date">Q4 2026</span>
-          <h4>Real-Time Messaging Platform</h4>
-          <p>Presence, delivery receipts, groups and real-time communication flows.</p>
-          <div class="project-tech"><span>WebSocket</span><span>Redis</span><span>Kafka</span></div>
-        </article>
-
-        <article class="roadmap-card spotlight-card">
-          <span class="roadmap-date">By Jan 2027</span>
-          <h4>Ticket Booking & Cloud Storage</h4>
-          <p>Two later builds exploring concurrency, reservation locks, file workflows, permissions and search.</p>
-          <div class="project-tech"><span>Concurrency</span><span>Redis Locks</span><span>Storage</span><span>ACL</span></div>
+        <article class="project-row">
+          <div class="project-number">03</div>
+          <div class="project-copy">
+            <div class="project-status status-concept">Prototype / planned</div>
+            <h3>Student AI Chat Platform</h3>
+            <p>
+              A student-oriented chat application concept exploring streaming responses,
+              document retrieval and a straightforward admin workflow without unnecessary architecture.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring AI</span><span>React</span><span>SSE</span></div>
+          </div>
+          <div class="project-art art-three" aria-hidden="true">
+            <div class="chat-bubble bubble-a"></div>
+            <div class="chat-bubble bubble-b"></div>
+            <div class="chat-input"><span></span><i>→</i></div>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
         </article>
       </div>
     </section>
@@ -401,8 +383,8 @@
         <p class="kicker">Contact</p>
         <h2>Have a serious opportunity<br>or a useful conversation?</h2>
         <p class="contact-copy">
-          I’m open to software engineering internships, student projects and conversations
-          where I can learn, contribute and be evaluated honestly.
+          For software engineering projects, technical collaboration or a thoughtful
+          conversation, reach me directly.
         </p>
         <div class="contact-actions">
           <a class="button button-primary magnetic" href="mailto:nomaanmunshii@gmail.com">Email me ↗</a>
