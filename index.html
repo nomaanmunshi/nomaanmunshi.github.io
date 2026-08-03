@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nomaan Munshi — Information and Communications Engineering student at the University of Trento, focused on software engineering and backend development." />
+  <meta name="theme-color" content="#0a0b09" />
+  <title>Nomaan Munshi — Software Engineering Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand magnetic" href="#top" aria-label="Nomaan Munshi home">
+      <span class="brand-mark">NM</span>
+      <span class="brand-name">Nomaan Munshi</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle magnetic" type="button" aria-label="Switch colour theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-label">Light</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow reveal">
+          <span class="status-dot"></span>
+          Software engineering student · Trento, Italy
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line">I build software</span>
+          <span class="title-line serif">that works beyond</span>
+          <span class="title-line accent-word">the demo.</span>
+        </h1>
+
+        <p class="hero-intro reveal">
+          I’m Nomaan, pursuing a <strong>Bachelor’s degree in Information and Communications Engineering</strong>
+          at the University of Trento. I focus on backend development, programming fundamentals and
+          building practical systems with Java, C++, Python and modern web technologies.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary magnetic" href="#projects">
+            Explore my work
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-secondary magnetic" href="mailto:nomaanmunshii@gmail.com">
+            Let’s talk
+          </a>
+        </div>
+
+        <div class="hero-meta reveal">
+          <span>University of Trento</span>
+          <span>Backend development</span>
+          <span>Open to internships</span>
+        </div>
+      </div>
+
+      <div class="hero-visual parallax-soft" aria-label="Portrait of Nomaan Munshi">
+        <div class="portrait-frame">
+          <div class="portrait-topline">
+            <span>01 / PROFILE</span>
+            <span class="live-pill"><i></i> Current</span>
+          </div>
+
+          <div class="portrait-wrap">
+            <img
+              class="profile-photo"
+              src="https://avatars.githubusercontent.com/u/211428944?v=4"
+              alt="Nomaan Munshi"
+              referrerpolicy="no-referrer"
+            />
+            <div class="photo-fallback" aria-hidden="true">NM</div>
+          </div>
+
+          <div class="portrait-caption">
+            <div>
+              <p class="caption-label">Current focus</p>
+              <p class="caption-value">Java backend · C++ DSA</p>
+            </div>
+            <div class="availability">2026</div>
+          </div>
+        </div>
+
+        <div class="floating-note note-one">
+          <span class="note-index">A</span>
+          <span>Clean architecture over feature clutter.</span>
+        </div>
+        <div class="floating-note note-two">
+          <span class="note-index">B</span>
+          <span>Learning by building and debugging.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-band" aria-label="Areas of focus">
+      <div class="marquee-track">
+        <span>Java</span><i>✦</i>
+        <span>Spring Boot</span><i>✦</i>
+        <span>C++</span><i>✦</i>
+        <span>Software Engineering</span><i>✦</i>
+        <span>Backend Development</span><i>✦</i>
+        <span>SQL</span><i>✦</i>
+        <span>Python</span><i>✦</i>
+        <span>Java</span><i>✦</i>
+        <span>Spring Boot</span><i>✦</i>
+        <span>C++</span><i>✦</i>
+        <span>Software Engineering</span><i>✦</i>
+        <span>Backend Development</span><i>✦</i>
+      </div>
+    </section>
+
+    <section id="about" class="section-shell about section-pad">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <p class="kicker">About</p>
+          <h2>Engineering foundations first.<br><em>Buzzwords later.</em></h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-main spotlight-card reveal-card">
+          <p class="large-copy">
+            I’m developing into a software engineer through a mix of university fundamentals,
+            backend projects and consistent problem-solving practice.
+          </p>
+          <p>
+            My degree combines computing, communications and engineering. Outside university,
+            I’m strengthening Java backend development, C++ data structures and algorithms,
+            databases, testing and the core computer-science subjects that matter in real interviews.
+          </p>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Degree</span>
+          <strong>Bachelor’s in Information and Communications Engineering</strong>
+          <span>University of Trento · Italy</span>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Direction</span>
+          <strong>Software engineering & backend development</strong>
+          <span>Practical systems, clear code and solid fundamentals</span>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Current priorities</span>
+          <strong>Java · Spring · C++ DSA · SQL</strong>
+          <span>With testing, operating systems and networking alongside</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section-pad">
+      <div class="section-shell">
+        <div class="section-heading section-heading-light">
+          <span class="section-number">02</span>
+          <div>
+            <p class="kicker">Skills</p>
+            <h2>Tools I’m using,<br><em>not a wall of logos.</em></h2>
+          </div>
+          <p class="section-aside">
+            Hover a card. The light follows your cursor without turning the page into a gaming dashboard.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card spotlight-card" data-level="Core language">
+            <div class="skill-top"><span class="skill-index">01</span><span>Backend</span></div>
+            <h3>Java</h3>
+            <p>Object-oriented programming, collections, exceptions, APIs and application structure.</p>
+            <div class="skill-footer"><span>Current strength</span><i style="--progress: 74%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Developing">
+            <div class="skill-top"><span class="skill-index">02</span><span>Framework</span></div>
+            <h3>Spring Boot</h3>
+            <p>REST APIs, dependency injection, persistence, validation and application configuration.</p>
+            <div class="skill-footer"><span>Actively improving</span><i style="--progress: 57%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="DSA language">
+            <div class="skill-top"><span class="skill-index">03</span><span>Problem solving</span></div>
+            <h3>C++</h3>
+            <p>University programming, data structures, algorithms and performance-aware problem solving.</p>
+            <div class="skill-footer"><span>Current focus</span><i style="--progress: 63%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Comfortable">
+            <div class="skill-top"><span class="skill-index">04</span><span>Automation</span></div>
+            <h3>Python</h3>
+            <p>Scripting, data handling, automation and rapid prototypes for practical tasks.</p>
+            <div class="skill-footer"><span>Comfortable</span><i style="--progress: 60%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Core">
+            <div class="skill-top"><span class="skill-index">05</span><span>Data</span></div>
+            <h3>SQL & MySQL</h3>
+            <p>Relational modelling, joins, constraints, query design and database-backed applications.</p>
+            <div class="skill-footer"><span>Project use</span><i style="--progress: 67%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Project use">
+            <div class="skill-top"><span class="skill-index">06</span><span>Frontend</span></div>
+            <h3>React & TypeScript</h3>
+            <p>Building clean interfaces that connect to backend services and REST APIs.</p>
+            <div class="skill-footer"><span>Supporting skill</span><i style="--progress: 49%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Workflow">
+            <div class="skill-top"><span class="skill-index">07</span><span>Engineering</span></div>
+            <h3>Git & Testing</h3>
+            <p>Version control, structured commits, unit testing and debugging-oriented development.</p>
+            <div class="skill-footer"><span>Daily workflow</span><i style="--progress: 61%"></i></div>
+          </article>
+
+          <article class="skill-card spotlight-card" data-level="Learning">
+            <div class="skill-top"><span class="skill-index">08</span><span>Deployment</span></div>
+            <h3>Docker</h3>
+            <p>Containerising development environments and understanding repeatable deployments.</p>
+            <div class="skill-footer"><span>Learning in projects</span><i style="--progress: 43%"></i></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell projects section-pad">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2>Projects with honest<br><em>status labels.</em></h2>
+        </div>
+      </div>
+
+      <div class="project-list">
+        <article class="project-row project-featured">
+          <div class="project-number">01</div>
+          <div class="project-copy">
+            <div class="project-status status-built">Built / evolving</div>
+            <h3>Synapse HEA</h3>
+            <p>
+              A healthcare workflow platform built around a Java Spring Boot backend and a React interface.
+              The project explores modular services, role-based workflows, persistence and API-driven application design.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+          </div>
+          <div class="project-art art-one" aria-hidden="true">
+            <div class="ui-window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <div class="side-column"></div>
+                <div class="data-stack"><b></b><b></b><b></b><b></b></div>
+              </div>
+            </div>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
+        </article>
+
+        <article class="project-row">
+          <div class="project-number">02</div>
+          <div class="project-copy">
+            <div class="project-status status-progress">In progress</div>
+            <h3>Payment Orchestration Platform</h3>
+            <p>
+              A backend-focused learning project around payment routing, webhooks, idempotency,
+              retries, reconciliation and failure handling. The goal is depth, not a fake production clone.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>REST</span></div>
+          </div>
+          <div class="project-art art-two" aria-hidden="true">
+            <div class="flow-node n1">API</div>
+            <div class="flow-node n2">ROUTE</div>
+            <div class="flow-node n3">BANK</div>
+            <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+              <path d="M80,110 C140,25 205,25 270,105 S350,185 380,110" />
+            </svg>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
+        </article>
+
+        <article class="project-row">
+          <div class="project-number">03</div>
+          <div class="project-copy">
+            <div class="project-status status-concept">Prototype / planned</div>
+            <h3>Student AI Chat Platform</h3>
+            <p>
+              A student-oriented chat application concept exploring streaming responses,
+              document retrieval and a straightforward admin workflow without unnecessary architecture.
+            </p>
+            <div class="project-tech"><span>Java</span><span>Spring AI</span><span>React</span><span>SSE</span></div>
+          </div>
+          <div class="project-art art-three" aria-hidden="true">
+            <div class="chat-bubble bubble-a"></div>
+            <div class="chat-bubble bubble-b"></div>
+            <div class="chat-input"><span></span><i>→</i></div>
+          </div>
+          <a class="project-link magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer" aria-label="View Nomaan's GitHub">↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey" class="journey section-pad">
+      <div class="section-shell">
+        <div class="section-heading section-heading-light">
+          <span class="section-number">04</span>
+          <div>
+            <p class="kicker">Journey</p>
+            <h2>Where I am now,<br><em>without pretending I’m finished.</em></h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024 — present</div>
+            <div class="timeline-content">
+              <h3>University of Trento</h3>
+              <p>Bachelor’s degree in Information and Communications Engineering.</p>
+            </div>
+            <div class="timeline-tag">Education</div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3>Backend engineering foundation</h3>
+              <p>Deepening Java, Spring Boot, SQL, testing and practical application design.</p>
+            </div>
+            <div class="timeline-tag">Focus</div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3>Problem solving in C++</h3>
+              <p>Building DSA consistency while strengthening operating systems, networking and databases.</p>
+            </div>
+            <div class="timeline-tag">Practice</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell contact section-pad">
+      <div class="contact-panel">
+        <p class="kicker">Contact</p>
+        <h2>Have a serious opportunity<br>or a useful conversation?</h2>
+        <p class="contact-copy">
+          I’m open to software engineering internships, student projects and conversations
+          where I can learn, contribute and be evaluated honestly.
+        </p>
+        <div class="contact-actions">
+          <a class="button button-primary magnetic" href="mailto:nomaanmunshii@gmail.com">Email me ↗</a>
+          <a class="button button-secondary magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <div class="contact-email">nomaanmunshii@gmail.com</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <span>© <span id="year"></span> Nomaan Munshi</span>
+    <span>Designed for clarity, not hype.</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
