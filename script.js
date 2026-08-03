@@ -90,6 +90,7 @@
       wheelMultiplier: 0.9,
       touchMultiplier: 1.15
     });
+    window.nomaanLenis = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add(time => lenis.raf(time * 1000));
@@ -229,4 +230,11 @@
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
+})();
+
+(() => {
+  const enhancements = document.createElement("script");
+  enhancements.src = "portfolio-enhancements.js?v=20260803-4";
+  enhancements.defer = true;
+  document.body.appendChild(enhancements);
 })();
