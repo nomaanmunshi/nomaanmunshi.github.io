@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Local backups
+*.before-*
+*.final-backup
+
+# Python
+__pycache__/
+*.pyc

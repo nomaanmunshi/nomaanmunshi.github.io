@@ -65,28 +65,6 @@
     });
   });
 
-  // Custom cursor
-  const cursorDot = document.querySelector(".cursor-dot");
-  const cursorRing = document.querySelector(".cursor-ring");
-
-  if (window.matchMedia("(pointer: fine)").matches) {
-    window.addEventListener("pointermove", event => {
-      cursorDot?.animate(
-        { left: `${event.clientX}px`, top: `${event.clientY}px` },
-        { duration: 80, fill: "forwards" }
-      );
-      cursorRing?.animate(
-        { left: `${event.clientX}px`, top: `${event.clientY}px` },
-        { duration: 320, fill: "forwards" }
-      );
-    });
-
-    document.querySelectorAll("a, button, .spotlight-card").forEach(el => {
-      el.addEventListener("mouseenter", () => body.classList.add("cursor-hover"));
-      el.addEventListener("mouseleave", () => body.classList.remove("cursor-hover"));
-    });
-  }
-
   // Magnetic hover
   if (window.matchMedia("(pointer: fine)").matches && !reduceMotion) {
     document.querySelectorAll(".magnetic").forEach(item => {
@@ -181,6 +159,28 @@
         opacity: 0,
         duration: .72,
         delay: (index % 4) * .04,
+        ease: "power3.out"
+      });
+    });
+
+    gsap.utils.toArray(".coursework-card").forEach((card, index) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 88%" },
+        y: 45,
+        opacity: 0,
+        duration: .75,
+        delay: (index % 3) * .05,
+        ease: "power3.out"
+      });
+    });
+
+    gsap.utils.toArray(".published-project, .roadmap-card").forEach((card, index) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 90%" },
+        y: 38,
+        opacity: 0,
+        duration: .7,
+        delay: (index % 3) * .04,
         ease: "power3.out"
       });
     });

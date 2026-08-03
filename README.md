@@ -1,53 +1,29 @@
 # Nomaan Munshi | Portfolio
 
-A responsive personal portfolio website built with HTML, CSS and JavaScript.
+Personal portfolio website for Nomaan Munshi, a Bachelor's student in Information and Communications Engineering at the University of Trento.
 
-The website presents my academic background, technical skills, selected coursework, software projects and current engineering focus.
-
-## Live Website
+## Live website
 
 [nomannn13.github.io](https://nomannn13.github.io/)
 
-## About
+## Overview
 
-I am pursuing a Bachelor's degree in Information and Communications Engineering at the University of Trento, Italy.
+The portfolio presents my academic background, selected university coursework, grouped technical skills, published software projects and development roadmap.
 
-My current focus is software engineering, backend development, programming fundamentals and building practical applications with Java, Spring Boot, C++, Python, SQL and modern web technologies.
-
-## Main Features
-
-- Responsive desktop and mobile layout
-- Dark and light themes
-- Smooth inertial scrolling
-- GSAP ScrollTrigger animations
-- Subtle parallax effects
-- Cursor-aware card lighting
-- Project and coursework sections
-- Accessible navigation
-- Reduced-motion support
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- GSAP
-- Lenis
-- GitHub Pages
-
-## Focus Areas
+## Focus areas
 
 - Software engineering
 - Backend development
 - Java and Spring Boot
-- REST APIs
-- SQL and database-backed applications
 - C++ problem solving and data structures
+- SQL and database-backed applications
 - React and TypeScript
 
-## Run Locally
+## Built with
 
-Clone the repository:
-
-```bash
-git clone https://github.com/nomannn13/nomannn13.github.io.git
+- HTML
+- CSS
+- JavaScript
+- GSAP ScrollTrigger
+- Lenis smooth scrolling
+- GitHub Pages
