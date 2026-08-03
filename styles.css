@@ -738,3 +738,9 @@ body.cursor-hover .cursor-ring { width: 52px; height: 52px; opacity: .65; }
     transition-duration: .01ms !important;
   }
 }
+
+/* Remove custom cursor follower */
+.cursor-dot,
+.cursor-ring {
+  display: none !important;
+}
