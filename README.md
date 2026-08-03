@@ -4,7 +4,7 @@ Personal portfolio website for Nomaan Munshi, a Bachelor's student in Informatio
 
 ## Live website
 
-[nomannn13.github.io](https://nomannn13.github.io/)
+[nomaanmunshi.github.io](https://nomaanmunshi.github.io/)
 
 ## Overview
 
