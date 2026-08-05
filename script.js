@@ -233,8 +233,16 @@
 })();
 
 (() => {
-  const enhancements = document.createElement("script");
-  enhancements.src = "portfolio-enhancements.js?v=20260803-4";
-  enhancements.defer = true;
-  document.body.appendChild(enhancements);
+  const ordanis = document.createElement("script");
+  ordanis.src = "ordanis-project.js?v=20260805-1";
+  ordanis.async = false;
+
+  ordanis.addEventListener("load", () => {
+    const enhancements = document.createElement("script");
+    enhancements.src = "portfolio-enhancements.js?v=20260803-5";
+    enhancements.async = false;
+    document.body.appendChild(enhancements);
+  });
+
+  document.body.appendChild(ordanis);
 })();
