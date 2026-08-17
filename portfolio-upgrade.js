@@ -113,7 +113,7 @@
           "Advanced Programming",
           "Embedded Software for the Internet of Things",
           "Next Generation Networks",
-          "Introduction to Parallel Computing"
+          "Parallel Computing"
         ]
       }
     ];
