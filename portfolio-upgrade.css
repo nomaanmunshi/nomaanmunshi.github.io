@@ -525,81 +525,18 @@ html[data-theme="light"] .credential-card {
 }
 
 /* --------------------------------------------------------------------------
-   Build roadmap — horizontal development pipeline, not page scroll takeover.
+   Build roadmap — one responsive grid with consistent card interactions.
    -------------------------------------------------------------------------- */
 .roadmap-head {
   margin-bottom: 26px;
 }
 
-.roadmap-route {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin: 0 0 18px;
-  padding: 0 18px;
-  color: var(--muted);
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-}
-
-.roadmap-route::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 18px;
-  right: 18px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--copper), color-mix(in srgb, var(--accent) 65%, transparent));
-  opacity: .32;
-}
-
-.roadmap-route span {
-  position: relative;
-  padding-top: 17px;
-}
-
-.roadmap-route span::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--copper);
-}
-
-.roadmap-viewport {
-  position: relative;
-  overflow-x: auto;
-  overflow-y: visible;
-  scrollbar-width: none;
-  border-radius: 16px;
-  overscroll-behavior-inline: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-.roadmap-viewport::-webkit-scrollbar { display: none; }
-
-.build-roadmap.roadmap-track {
-  width: max-content;
-  display: flex;
-  grid-template-columns: none;
-  gap: 14px;
-  padding: 2px 2px 16px;
-}
-
 .roadmap-card {
-  flex: 0 0 clamp(275px, 26vw, 355px);
-  width: clamp(275px, 26vw, 355px);
+  width: 100%;
+  min-width: 0;
   height: 325px;
   min-height: 325px;
   border-radius: 15px;
-  scroll-snap-align: start;
   transition:
     transform .40s cubic-bezier(.2,.7,.2,1),
     border-color .40s ease,
@@ -675,14 +612,10 @@ html[data-theme="light"] .credential-card {
   padding: 5px 7px;
 }
 
-.roadmap-viewport.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
+.build-roadmap.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
   opacity: .54;
   filter: saturate(.75) blur(1.15px);
   scale: .988;
-}
-
-.roadmap-card[aria-hidden="true"] {
-  user-select: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -751,8 +684,7 @@ html[data-theme="light"] .credential-card {
   }
 
   .roadmap-card {
-    flex-basis: clamp(285px, 34vw, 340px);
-    width: clamp(285px, 34vw, 340px);
+    width: 100%;
   }
 }
 
@@ -775,7 +707,7 @@ html[data-theme="light"] .credential-card {
   }
 
   .published-project-grid.has-project-focus .published-project:not(.is-project-active),
-  .roadmap-viewport.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
+  .build-roadmap.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
     opacity: 1;
     filter: none;
     transform: none;
@@ -800,29 +732,8 @@ html[data-theme="light"] .credential-card {
     opacity: .07;
   }
 
-  .roadmap-route {
-    padding-inline: 4px;
-    font-size: .58rem;
-  }
-
-  .roadmap-route::before {
-    left: 4px;
-    right: 4px;
-  }
-
-  .roadmap-viewport {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .build-roadmap.roadmap-track {
-    display: flex;
-    grid-template-columns: none;
-  }
-
   .roadmap-card {
-    flex: 0 0 min(84vw, 330px);
-    width: min(84vw, 330px);
+    width: 100%;
     height: auto;
     min-height: 315px;
   }
@@ -836,10 +747,6 @@ html[data-theme="light"] .credential-card {
 
   .roadmap-card .roadmap-focus-kicker {
     margin-bottom: 8px;
-  }
-
-  .roadmap-card[aria-hidden="true"] {
-    display: none;
   }
 
   .coursework-card {
@@ -869,11 +776,6 @@ html[data-theme="light"] .credential-card {
     top: 48px;
   }
 
-  .roadmap-route {
-    grid-template-columns: repeat(4, minmax(72px, 1fr));
-    overflow: hidden;
-  }
-
   .coursework-card {
     min-height: 360px;
   }
@@ -885,7 +787,7 @@ html[data-theme="light"] .credential-card {
 
 @media (pointer: coarse) {
   .published-project-grid.has-project-focus .published-project:not(.is-project-active),
-  .roadmap-viewport.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
+  .build-roadmap.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
     opacity: 1;
     filter: none;
     transform: none;
@@ -920,7 +822,7 @@ html[data-theme="light"] .credential-card {
   }
 
   .published-project-grid.has-project-focus .published-project:not(.is-project-active),
-  .roadmap-viewport.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
+  .build-roadmap.has-roadmap-focus .roadmap-card:not(.is-roadmap-active) {
     filter: none;
   }
 

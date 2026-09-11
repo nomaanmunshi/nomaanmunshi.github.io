@@ -3,7 +3,6 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
-  const desktopRoadmap = window.matchMedia("(min-width: 821px) and (pointer: fine)");
 
   const FOCUS_BY_PROJECT = [
     ["ordanis", "Reliable distributed execution"],
@@ -15,7 +14,6 @@
     ["java phase 2", "Java backend iteration"]
   ];
 
-  let roadmapController = null;
   let motifPointerFrame = null;
   let activeMotifSection = null;
 
@@ -330,14 +328,14 @@
     const track = document.querySelector(".build-roadmap");
     if (!track || track.dataset.roadmapUpgrade === "true") return;
     track.dataset.roadmapUpgrade = "true";
-    track.classList.add("roadmap-track");
 
-    const originalCards = Array.from(track.querySelectorAll(":scope > .roadmap-card"));
-    if (!originalCards.length) return;
+    const cards = Array.from(track.querySelectorAll(":scope > .roadmap-card"));
+    if (!cards.length) return;
 
-    originalCards.forEach(card => {
+    cards.forEach(card => {
       const title = card.querySelector("h4")?.textContent || "Project";
       const paragraph = card.querySelector("p");
+      card.tabIndex = 0;
       if (paragraph && !card.querySelector(".roadmap-focus-kicker")) {
         const kicker = document.createElement("span");
         kicker.className = "roadmap-focus-kicker";
@@ -346,40 +344,7 @@
       }
     });
 
-    const route = document.createElement("div");
-    route.className = "roadmap-route";
-    route.setAttribute("aria-hidden", "true");
-    route.innerHTML = "<span>Now</span><span>Sep 2026</span><span>Q4 2026</span><span>Jan 2027</span>";
-
-    const viewport = document.createElement("div");
-    viewport.className = "roadmap-viewport";
-    viewport.setAttribute("aria-label", "Planned project roadmap");
-
-    track.before(route);
-    track.parentNode.insertBefore(viewport, track);
-    viewport.appendChild(track);
-
-    originalCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      clone.removeAttribute("tabindex");
-      clone.removeAttribute("style");
-      clone.setAttribute("inert", "");
-      clone.dataset.roadmapClone = "true";
-      track.appendChild(clone);
-    });
-
-    bindRoadmapFocus(viewport);
-    roadmapController = createRoadmapAutoplay(viewport, track, originalCards.length);
-
-    const handleModeChange = () => {
-      if (!roadmapController) return;
-      if (desktopRoadmap.matches && !reduceMotion) roadmapController.start();
-      else roadmapController.stop();
-    };
-
-    desktopRoadmap.addEventListener?.("change", handleModeChange);
-    handleModeChange();
+    bindRoadmapFocus(track);
   }
 
   function roadmapFocus(title) {
@@ -395,106 +360,36 @@
     return "implementation depth";
   }
 
-  function bindRoadmapFocus(viewport) {
-    viewport.addEventListener("pointerover", event => {
+  function bindRoadmapFocus(track) {
+    track.addEventListener("pointerover", event => {
       const card = event.target.closest(".roadmap-card");
       if (!card) return;
-      viewport.classList.add("has-roadmap-focus");
-      viewport.querySelectorAll(".roadmap-card").forEach(item => item.classList.toggle("is-roadmap-active", item === card));
+      track.classList.add("has-roadmap-focus");
+      track.querySelectorAll(".roadmap-card").forEach(item => item.classList.toggle("is-roadmap-active", item === card));
     });
 
-    viewport.addEventListener("pointerout", event => {
+    track.addEventListener("pointerout", event => {
       const card = event.target.closest(".roadmap-card");
       if (!card || (event.relatedTarget && card.contains(event.relatedTarget))) return;
       card.classList.remove("is-roadmap-active");
       if (!event.relatedTarget?.closest?.(".roadmap-card")) {
-        viewport.classList.remove("has-roadmap-focus");
-        viewport.querySelectorAll(".roadmap-card").forEach(item => item.classList.remove("is-roadmap-active"));
+        track.classList.remove("has-roadmap-focus");
+        track.querySelectorAll(".roadmap-card").forEach(item => item.classList.remove("is-roadmap-active"));
       }
     });
 
-    viewport.addEventListener("focusin", event => {
+    track.addEventListener("focusin", event => {
       const card = event.target.closest(".roadmap-card");
       if (!card) return;
-      viewport.classList.add("has-roadmap-focus");
-      viewport.querySelectorAll(".roadmap-card").forEach(item => item.classList.toggle("is-roadmap-active", item === card));
+      track.classList.add("has-roadmap-focus");
+      track.querySelectorAll(".roadmap-card").forEach(item => item.classList.toggle("is-roadmap-active", item === card));
     });
 
-    viewport.addEventListener("focusout", event => {
-      if (event.relatedTarget && viewport.contains(event.relatedTarget)) return;
-      viewport.classList.remove("has-roadmap-focus");
-      viewport.querySelectorAll(".roadmap-card").forEach(item => item.classList.remove("is-roadmap-active"));
+    track.addEventListener("focusout", event => {
+      if (event.relatedTarget && track.contains(event.relatedTarget)) return;
+      track.classList.remove("has-roadmap-focus");
+      track.querySelectorAll(".roadmap-card").forEach(item => item.classList.remove("is-roadmap-active"));
     });
-  }
-
-  function createRoadmapAutoplay(viewport, track, originalCount) {
-    let rafId = 0;
-    let previousTime = 0;
-    let paused = false;
-    let resumeTimer = 0;
-    let running = false;
-
-    const originalCards = () => Array.from(track.querySelectorAll(":scope > .roadmap-card")).slice(0, originalCount);
-
-    const setWidth = () => {
-      const cards = originalCards();
-      if (!cards.length) return 0;
-      const first = cards[0];
-      const last = cards[cards.length - 1];
-      return last.offsetLeft + last.offsetWidth + 14 - first.offsetLeft;
-    };
-
-    const frame = time => {
-      if (!running) return;
-      const width = setWidth();
-      if (!previousTime) previousTime = time;
-      const delta = Math.min(time - previousTime, 50);
-      previousTime = time;
-
-      if (!paused && width > 0) {
-        const pxPerMs = width / 20000;
-        viewport.scrollLeft += pxPerMs * delta;
-        if (viewport.scrollLeft >= width) viewport.scrollLeft -= width;
-      }
-
-      rafId = requestAnimationFrame(frame);
-    };
-
-    const pause = () => {
-      paused = true;
-      window.clearTimeout(resumeTimer);
-    };
-
-    const resumeLater = () => {
-      window.clearTimeout(resumeTimer);
-      resumeTimer = window.setTimeout(() => {
-        paused = false;
-        previousTime = performance.now();
-      }, 650);
-    };
-
-    viewport.addEventListener("pointerenter", pause);
-    viewport.addEventListener("pointerleave", resumeLater);
-    viewport.addEventListener("focusin", pause);
-    viewport.addEventListener("focusout", event => {
-      if (event.relatedTarget && viewport.contains(event.relatedTarget)) return;
-      resumeLater();
-    });
-
-    return {
-      start() {
-        if (running || reduceMotion) return;
-        running = true;
-        previousTime = 0;
-        rafId = requestAnimationFrame(frame);
-      },
-      stop() {
-        running = false;
-        previousTime = 0;
-        cancelAnimationFrame(rafId);
-        window.clearTimeout(resumeTimer);
-      }
-    };
   }
 
   function bindMotifPointer() {
