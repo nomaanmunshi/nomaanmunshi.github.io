@@ -1,834 +1,503 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nomaan Munshi | Information and Communications Engineering student at the University of Trento, focused on software engineering and backend development." />
+  <meta name="theme-color" content="#0a0b09" />
+  <title>Nomaan Munshi | Software Engineering Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-<html data-theme="light" lang="en">
-  <head>
-    <script>
-      (() => {
-        let t;
-        try {
-          t = localStorage.getItem("nomaan-theme");
-        } catch {}
-        document.documentElement.dataset.theme =
-          t === "dark" || t === "light"
-            ? t
-            : matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light";
-      })();
-    </script>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta
-      content="Nomaan Munshi | Information and Communications Engineering student at the University of Trento, focused on software engineering and backend development."
-      name="description"
-    />
-    <meta content="#F7F5F0" name="theme-color" />
-    <title>Nomaan Munshi | Software Engineering Portfolio</title>
-    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="styles.css" rel="stylesheet" />
-    <meta
-      content="Nomaan Munshi | Software Engineering Portfolio"
-      property="og:title"
-    />
-    <meta
-      content="Engineering student at the University of Trento. Selected work in backend development, distributed systems and full-stack applications."
-      property="og:description"
-    />
-    <meta content="website" property="og:type" />
-    <meta content="https://nomaanmunshi.github.io/" property="og:url" />
-    <meta
-      content="https://nomaanmunshi.github.io/assets/social-preview.jpg"
-      property="og:image"
-    />
-    <meta
-      content="Nomaan Munshi — software engineering portfolio"
-      property="og:image:alt"
-    />
-    <meta content="summary_large_image" name="twitter:card" />
-    <link href="https://nomaanmunshi.github.io/" rel="canonical" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <a aria-label="Nomaan Munshi home" class="brand magnetic" href="#top">
-        <span class="brand-mark">NM</span>
-        <span class="brand-name">Nomaan Munshi</span>
-      </a>
-      <nav aria-label="Primary navigation" class="desktop-nav">
-        <a href="#projects">Projects</a><a href="#journey">Experience</a
-        ><a href="#skills">Skills</a><a href="#about">About</a
-        ><a href="#contact">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <button
-          aria-label="Switch colour theme"
-          class="theme-toggle magnetic"
-          type="button"
-        >
-          <span aria-hidden="true" class="theme-icon">◐</span>
-          <span class="theme-label">Light</span>
-        </button>
-        <button
-          aria-controls="mobile-navigation"
-          aria-expanded="false"
-          aria-label="Open navigation"
-          class="menu-toggle"
-          type="button"
-        >
-          <span></span><span></span>
-        </button>
-      </div>
-    </header>
-    <div
-      aria-hidden="true"
-      class="mobile-menu"
-      hidden=""
-      id="mobile-navigation"
-    >
-      <a href="#projects">Projects</a><a href="#journey">Experience</a
-      ><a href="#skills">Skills</a><a href="#about">About</a
-      ><a href="#contact">Contact</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="portfolio-upgrade.css?v=20260817-1" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand magnetic" href="#top" aria-label="Nomaan Munshi home">
+      <span class="brand-mark">NM</span>
+      <span class="brand-name">Nomaan Munshi</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle magnetic" type="button" aria-label="Switch colour theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-label">Light</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </div>
-    <main id="main-content">
-      <section class="hero section-shell" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow">ENGINEERING STUDENT · UNIVERSITY OF TRENTO</p>
-          <h1 class="hero-title">
-            Nomaan Munshi.<span class="hero-title-sub"
-              >Thoughtful software.<br />Solid foundations.</span
-            >
-          </h1>
-          <p class="hero-intro reveal">
-            I study Computer, Communications and Electronic Engineering at the
-            University of Trento, with a focus on
-            <strong>backend development and practical software systems.</strong>
-            I work with Java, C++ and modern web technologies.
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#coursework">Coursework</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <h1 class="hero-title">
+          <span class="title-line">I build software</span>
+          <span class="title-line serif">that works beyond</span>
+          <span class="title-line accent-word">the demo.</span>
+        </h1>
+
+        <p class="hero-intro reveal">
+          I’m Nomaan, pursuing a <strong>Bachelor’s degree in Information and Communications Engineering</strong>
+          at the University of Trento. I focus on backend development, programming fundamentals and
+          building practical systems with Java, C++, Python and modern web technologies.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary magnetic" href="#projects">
+            Explore my work
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-secondary magnetic" href="mailto:nomaanmunshii@gmail.com">
+            Let’s talk
+          </a>
+        </div>
+
+        <div class="hero-meta reveal">
+          <span>University of Trento</span>
+          <span>Backend development</span>
+        </div>
+      </div>
+
+      <div class="hero-visual parallax-soft" aria-label="Portrait of Nomaan Munshi">
+        <div class="portrait-frame">
+          <div class="portrait-topline">
+            <span>01 / PROFILE</span>
+            <span class="live-pill"><i></i> Current</span>
+          </div>
+
+          <div class="portrait-wrap">
+            <img
+              class="profile-photo"
+              src="assets/nomaan-profile.jpg"
+              alt="Nomaan Munshi at a mountain lake in Trentino"
+            />
+            <div class="photo-fallback" aria-hidden="true">NM</div>
+          </div>
+
+          <div class="portrait-caption">
+            <div>
+              <p class="caption-label">Current focus</p>
+              <p class="caption-value">Java backend · C++ DSA</p>
+            </div>
+            <div class="availability">2026</div>
+          </div>
+        </div>
+
+        <div class="floating-note note-one">
+          <span class="note-index">A</span>
+          <span>Clean architecture over feature clutter.</span>
+        </div>
+        <div class="floating-note note-two">
+          <span class="note-index">B</span>
+          <span>Learning by building and debugging.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-band" aria-label="Areas of focus">
+      <div class="marquee-track">
+        <span>Java</span><i>✦</i>
+        <span>Spring Boot</span><i>✦</i>
+        <span>C++</span><i>✦</i>
+        <span>Software Engineering</span><i>✦</i>
+        <span>Backend Development</span><i>✦</i>
+        <span>SQL</span><i>✦</i>
+        <span>Python</span><i>✦</i>
+        <span>Java</span><i>✦</i>
+        <span>Spring Boot</span><i>✦</i>
+        <span>C++</span><i>✦</i>
+        <span>Software Engineering</span><i>✦</i>
+        <span>Backend Development</span><i>✦</i>
+      </div>
+    </section>
+
+    <section id="about" class="section-shell about section-pad">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <p class="kicker">About</p>
+          <h2>Engineering foundations first.<br><em>Buzzwords later.</em></h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-main spotlight-card reveal-card">
+          <p class="large-copy">
+            I’m developing into a software engineer through a mix of university fundamentals,
+            backend projects and consistent problem-solving practice.
           </p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary" href="#projects"
-              >View Projects <span aria-hidden="true">↗</span></a
-            ><a
-              class="button button-secondary"
-              href="assets/Nomaan_Munshi_CV.pdf"
-              rel="noreferrer"
-              target="_blank"
-              >View CV <span aria-hidden="true">↗</span></a
-            >
-          </div>
-          <div class="hero-meta reveal">
-            <a
-              href="https://github.com/nomaanmunshi"
-              rel="noreferrer"
-              target="_blank"
-              >GitHub ↗</a
-            ><a
-              href="https://www.linkedin.com/in/nomaan-munshi-b92927333"
-              rel="noreferrer"
-              target="_blank"
-              >LinkedIn ↗</a
-            >
-          </div>
+          <p>
+            My degree combines computing, communications and engineering. Outside university,
+            I’m strengthening Java backend development, C++ data structures and algorithms,
+            databases, testing and the core computer science subjects that matter in real interviews.
+          </p>
+          <div class="about-signature" role="img" aria-label="Nomaan Munshi signature"></div>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Degree</span>
+          <strong>Bachelor’s in Information and Communications Engineering</strong>
+          <span>University of Trento · Italy</span>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Direction</span>
+          <strong>Software engineering & backend development</strong>
+          <span>Practical systems, clear code and solid fundamentals</span>
+        </article>
+
+        <article class="fact-card spotlight-card reveal-card">
+          <span class="fact-label">Current priorities</span>
+          <strong>Java · Spring · C++ DSA · SQL</strong>
+          <span>With testing, operating systems and networking alongside</span>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="coursework" class="section-shell coursework section-pad">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <div>
+          <p class="kicker">Selected coursework</p>
+          <h2>Academic foundations<br><em>behind the code.</em></h2>
         </div>
-        <div
-          aria-label="Portrait of Nomaan Munshi"
-          class="hero-visual parallax-soft"
-        >
-          <div class="portrait-frame">
-            <div class="portrait-topline">
-              <span>A LITTLE PERSPECTIVE</span><span>TRENTINO, ITALY</span>
-            </div>
-            <div class="portrait-wrap">
-              <img
-                alt="Nomaan Munshi at a mountain lake in Trentino"
-                class="profile-photo"
-                fetchpriority="high"
-                height="900"
-                src="assets/nomaan-profile.webp"
-                width="720"
-              />
-            </div>
-            <div class="portrait-caption">
-              <span>Beyond the screen.</span><span>In the mountains ↗</span>
-            </div>
+        <p class="section-aside">
+          Relevant university subjects presented without grades or credit totals.
+        </p>
+      </div>
+
+      <div class="coursework-grid">
+        <article class="coursework-card spotlight-card">
+          <div class="coursework-card-top">
+            <span class="coursework-index">01</span>
+            <span>Software & computing</span>
           </div>
-        </div>
-      </section>
-      <section class="section-shell projects section-pad" id="projects">
-        <div class="section-heading">
-          <span class="section-number">01</span>
+          <h3>Core systems</h3>
+          <div class="course-list">
+            <span>Software Engineering</span>
+            <span>Processing Systems</span>
+            <span>Databases</span>
+            <span>Introduction to Computer Programming</span>
+          </div>
+        </article>
+
+        <article class="coursework-card spotlight-card">
+          <div class="coursework-card-top">
+            <span class="coursework-index">02</span>
+            <span>Data & mathematics</span>
+          </div>
+          <h3>Analytical foundations</h3>
+          <div class="course-list">
+            <span>Probability</span>
+            <span>Geometry & Linear Algebra</span>
+            <span>Calculus I</span>
+            <span>Remote Sensing Systems & Image Analysis</span>
+          </div>
+        </article>
+
+        <article class="coursework-card spotlight-card">
+          <div class="coursework-card-top">
+            <span class="coursework-index">03</span>
+            <span>Interdisciplinary</span>
+          </div>
+          <h3>Engineering context</h3>
+          <div class="course-list">
+            <span>Business Organization & Management</span>
+            <span>ECIU: Building Cities of the Future</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section-pad">
+      <div class="section-shell">
+        <div class="section-heading section-heading-light">
+          <span class="section-number">03</span>
           <div>
-            <p class="kicker">Projects</p>
-            <h2>Selected work.<br /><em>From idea to implementation.</em></h2>
+            <p class="kicker">Skills</p>
+            <h2>What I work with,<br><em>grouped by purpose.</em></h2>
           </div>
           <p class="section-aside">
-            Backend systems, full-stack applications and collaborative
-            engineering projects. Explore the code and the decisions behind it.
+            Technologies used across coursework and projects, organised by their role in a system, not by subjective percentage scores.
           </p>
         </div>
-        <div class="project-subhead">
-          <span>Selected repositories</span><span>01 — 07</span>
-        </div>
-        <div class="published-project-grid">
-          <article class="published-project project-large">
-            <div class="project-card-top">
-              <span>01</span>
-              <span class="repo-status">Engineering project · Demo</span>
+
+        <div class="skills-grid skills-grid-grouped">
+          <article class="skill-card skill-group spotlight-card">
+            <div class="skill-top"><span class="skill-index">01</span><span>Server-side development</span></div>
+            <h3>Backend & APIs</h3>
+            <p>Structured backend applications, REST endpoints, authentication flows, validation and tested service logic.</p>
+            <div class="skill-tags">
+              <span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>Spring Security</span><span>JWT</span><span>JUnit</span><span>Mockito</span>
             </div>
-            <div class="featured-copy">
-              <h3>Ordanis</h3>
-              <p>
-                A distributed workflow engine for coordinating multi-step jobs
-                across Java workers. I built the execution engine, backend and
-                React operations console.
-              </p>
-              <p class="project-detail">
-                Dependency graphs, durable PostgreSQL state, task leases and
-                worker-loss recovery. Authentication and scheduling remain
-                planned features.
-              </p>
-              <div class="project-tech">
-                <span>Java 21</span>
-                <span>Spring Boot</span>
-                <span>gRPC</span>
-                <span>PostgreSQL</span>
-                <span>React</span>
-                <span>Docker</span>
-              </div>
-              <a
-                class="project-document-link"
-                href="https://nomaanmunshi.github.io/ordanis/"
-                rel="noreferrer"
-                target="_blank"
-                >Open live web demo ↗</a
-              >
-              <a
-                href="https://github.com/nomaanmunshi/ordanis"
-                rel="noreferrer"
-                target="_blank"
-                >View source code ↗</a
-              >
-            </div>
-            <figure class="project-preview">
-              <a
-                href="https://nomaanmunshi.github.io/ordanis/"
-                rel="noreferrer"
-                target="_blank"
-                ><img
-                  alt="Screenshot of the Ordanis public demo, showing its workflow execution diagram"
-                  height="1000"
-                  loading="lazy"
-                  src="assets/ordanis-demo.webp"
-                  width="1440"
-              /></a>
-              <figcaption>Ordanis · Public demo screenshot</figcaption>
-            </figure>
           </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>02</span
-              ><span class="repo-status">Published repository</span>
+
+          <article class="skill-card skill-group spotlight-card">
+            <div class="skill-top"><span class="skill-index">02</span><span>Persistence</span></div>
+            <h3>Databases & Caching</h3>
+            <p>Relational modelling, query design and connecting application logic to persistent and cached data.</p>
+            <div class="skill-tags">
+              <span>SQL</span><span>MySQL</span><span>Redis</span><span>JPA / Hibernate</span><span>Schema Design</span>
             </div>
-            <h3>Synapse HEA Healthcare System</h3>
-            <p>
-              A healthcare workflow platform exploring a Java and Spring Boot
-              backend, React interface, role-based flows and database-backed
-              application design.
-            </p>
-            <div class="project-tech">
-              <span>Java</span><span>Spring Boot</span><span>React</span
-              ><span>MySQL</span>
-            </div>
-            <a
-              href="https://github.com/nomaanmunshi/synapse-hea-healthcare-system"
-              rel="noreferrer"
-              target="_blank"
-              >View repository ↗</a
-            >
-            <a
-              href="assets/Synapse_HEA_Phase_2_Engineering_Documentation.pdf"
-              rel="noreferrer"
-              target="_blank"
-              >Planning &amp; design PDF ↗</a
-            >
           </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>03</span><span class="repo-status">Prototype</span>
+
+          <article class="skill-card skill-group spotlight-card">
+            <div class="skill-top"><span class="skill-index">03</span><span>Client-side development</span></div>
+            <h3>Frontend</h3>
+            <p>Responsive interfaces that consume backend services and keep application flows clear for users.</p>
+            <div class="skill-tags">
+              <span>React</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
             </div>
-            <h3>Krotoski Łódź Digital Twin</h3>
-            <p>
-              A digital-twin and showroom-operations project using a modern
-              React and TypeScript workflow to represent real business
-              processes.
-            </p>
-            <div class="project-tech">
-              <span>React</span><span>TypeScript</span><span>Digital Twin</span>
-            </div>
-            <a
-              href="https://github.com/nomaanmunshi/tac-krotoski-lodz-digital-twin"
-              rel="noreferrer"
-              target="_blank"
-              >View repository ↗</a
-            >
-            <a
-              href="assets/Grupa_Krotoski_Recommendation.pdf"
-              rel="noreferrer"
-              target="_blank"
-              >Read recommendation ↗</a
-            >
           </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>04</span><span class="repo-status">Earlier project</span>
+
+          <article class="skill-card skill-group spotlight-card">
+            <div class="skill-top"><span class="skill-index">04</span><span>Workflow & delivery</span></div>
+            <h3>Tools & Infrastructure</h3>
+            <p>Source control, API testing, containers and repeatable development and deployment workflows.</p>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>Docker</span><span>Nginx</span><span>Postman</span><span>GitHub Actions</span>
             </div>
-            <h3>Software Engineering University Project</h3>
-            <p>
-              A team-based university software engineering project covering
-              requirements, application flows, authentication and
-              database-backed web development.
-            </p>
-            <div class="project-tech">
-              <span>JavaScript</span><span>Web</span><span>MySQL</span
-              ><span>Team Project</span>
-            </div>
-            <span
-              class="source-unavailable"
-              data-original-url="https://github.com/nomannn13/SOFTWARE-ENGINEERING-UNIVERSITY-PROJECT"
-              rel="noreferrer"
-              target="_blank"
-              >Source currently unavailable</span
-            >
           </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>05</span><span class="repo-status">Published</span>
+
+          <article class="skill-card skill-group skill-group-wide spotlight-card">
+            <div class="skill-top"><span class="skill-index">05</span><span>Programming & foundations</span></div>
+            <h3>Languages & Computer Science</h3>
+            <p>Problem solving and core computing knowledge alongside project work, with attention to what happens below the framework layer.</p>
+            <div class="skill-tags">
+              <span>C++</span><span>Python</span><span>Data Structures & Algorithms</span><span>Operating Systems</span><span>Computer Networks</span><span>Software Engineering</span>
             </div>
-            <h3>TaskPilot AI</h3>
-            <p>
-              An AI-assisted task and productivity project used to explore
-              practical application structure and intelligent workflow ideas.
-            </p>
-            <div class="project-tech">
-              <span>AI</span><span>Productivity</span
-              ><span>Application Design</span>
-            </div>
-            <a
-              href="https://github.com/nomaanmunshi/taskpilot-ai"
-              rel="noreferrer"
-              target="_blank"
-              >View repository ↗</a
-            >
-          </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>06</span><span class="repo-status">Published</span>
-            </div>
-            <h3>Product Sales Tracker</h3>
-            <p>
-              A compact Python automation project for recording, processing and
-              reviewing product-sales information.
-            </p>
-            <div class="project-tech">
-              <span>Python</span><span>Automation</span
-              ><span>Data Handling</span>
-            </div>
-            <a
-              href="https://github.com/nomaanmunshi/product-sales-tracker"
-              rel="noreferrer"
-              target="_blank"
-              >View repository ↗</a
-            >
-          </article>
-          <article class="published-project">
-            <div class="project-card-top">
-              <span>07</span><span class="repo-status">Earlier project</span>
-            </div>
-            <h3>Synapse HEA: Java Phase 2</h3>
-            <p>
-              A Java-focused continuation of the Synapse HEA work, separated as
-              a development phase for backend learning and iteration.
-            </p>
-            <div class="project-tech">
-              <span>Java</span><span>Backend</span><span>Iteration</span>
-            </div>
-            <span
-              class="source-unavailable"
-              data-original-url="https://github.com/nomannn13/synapse-hea-java-phase2"
-              rel="noreferrer"
-              target="_blank"
-              >Source currently unavailable</span
-            >
           </article>
         </div>
-        <details class="roadmap-disclosure">
-          <summary>
-            Earlier learning roadmap <span>Plans &amp; course builds</span>
-          </summary>
-          <p>
-            These are earlier learning plans, separate from the published work
-            above. Timelines and progress are being reviewed.
-          </p>
-          <div class="build-roadmap">
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Course build</span>
-              <h4>Streamly</h4>
-              <p>
-                An Engineering Digest course project for practising application
-                structure, backend flows and end-to-end implementation.
-              </p>
-              <div class="project-tech">
-                <span>Java</span><span>Spring Boot</span><span>Web</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Started</span>
-              <h4>URL Shortener</h4>
-              <p>
-                A compact backend build covering URL mapping, redirects,
-                persistence, validation and API design.
-              </p>
-              <div class="project-tech">
-                <span>Spring Boot</span><span>REST</span><span>SQL</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Started</span>
-              <h4>ZipCart</h4>
-              <p>
-                An Engineering Digest course project for strengthening practical
-                full-stack and backend implementation.
-              </p>
-              <div class="project-tech">
-                <span>Java</span><span>Spring</span><span>Web</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card roadmap-accent">
-              <span class="roadmap-date">Planned</span>
-              <h4>Payment Orchestration Platform</h4>
-              <p>
-                Payment intents, transaction ledgers, retries, webhooks,
-                idempotency, reconciliation and resilient failure handling.
-              </p>
-              <div class="project-tech">
-                <span>Spring Boot</span><span>Kafka</span><span>Webhooks</span
-                ><span>Resilience4j</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Planned</span>
-              <h4>Student AI Chat Platform</h4>
-              <p>
-                Streaming conversations, document retrieval, RAG and a clear
-                student-oriented workflow.
-              </p>
-              <div class="project-tech">
-                <span>Spring AI</span><span>SSE</span><span>RAG</span
-                ><span>Vector DB</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Planned</span>
-              <h4>Real-Time Messaging Platform</h4>
-              <p>
-                One-to-one and group messaging, presence, delivery receipts and
-                real-time communication flows.
-              </p>
-              <div class="project-tech">
-                <span>WebSocket</span><span>Redis</span><span>Kafka</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Planned</span>
-              <h4>Ticket Booking Platform</h4>
-              <p>
-                Event discovery, seat inventory, booking locks, payments and
-                concurrency-aware reservation flows.
-              </p>
-              <div class="project-tech">
-                <span>Spring Boot</span><span>Redis Locks</span
-                ><span>Payments</span><span>Concurrency</span>
-              </div>
-            </article>
-            <article class="roadmap-card spotlight-card">
-              <span class="roadmap-date">Planned</span>
-              <h4>Cloud Storage Platform</h4>
-              <p>
-                File upload, folder hierarchy, sharing permissions, versioning,
-                indexing and search-ready storage workflows.
-              </p>
-              <div class="project-tech">
-                <span>Spring Boot</span><span>Storage</span><span>ACL</span
-                ><span>Search</span>
-              </div>
-            </article>
-          </div>
-        </details>
-      </section>
-      <section class="journey section-pad" id="journey">
-        <div class="section-shell">
-          <div class="section-heading section-heading-light">
-            <span class="section-number">02</span>
-            <div>
-              <p class="kicker">Experience &amp; education</p>
-              <h2>
-                Learning across borders.<br /><em
-                  >Taking responsibility at home.</em
-                >
-              </h2>
-            </div>
-          </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">2024 - present</div>
-              <div class="timeline-content">
-                <h3>University of Trento</h3>
-                <p>
-                  Bachelor's degree in Computer, Communications and Electronic
-                  Engineering, supported by a merit-based scholarship.
-                </p>
-              </div>
-              <div class="timeline-tag">Education</div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">Sep 2025 – Feb 2026</div>
-              <div class="timeline-content">
-                <h3>Politecnico di Milano</h3>
-                <p>
-                  Academic exchange with coursework in artificial intelligence,
-                  databases and remote sensing.
-                </p>
-              </div>
-              <div class="timeline-tag">Erasmus italiano</div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">2025 - 2026</div>
-              <div class="timeline-content">
-                <h3>Linköping University · ECIU Challenge</h3>
-                <p>
-                  Collaborated in an international, multidisciplinary student
-                  team on a project-based challenge, strengthening adaptability,
-                  communication and rapid problem definition.
-                </p>
-              </div>
-              <div class="timeline-tag">Sweden</div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">2026</div>
-              <div class="timeline-content">
-                <h3>Łódź University of Technology · Grupa Krotoski</h3>
-                <p>
-                  Worked on an industry challenge with Grupa Krotoski involving
-                  automotive showroom and operational workflows, including
-                  Porsche showroom context, while collaborating in an
-                  international team.
-                </p>
-              </div>
-              <div class="timeline-tag">Poland</div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">Jan 2026 - present</div>
-              <div class="timeline-content">
-                <h3>Elected Student Representative</h3>
-                <p>
-                  Represent residents of the San Bartolomeo university
-                  residence, communicate shared concerns and coordinate with
-                  housing management on community and facility matters.
-                </p>
-              </div>
-              <div class="timeline-tag">Leadership</div>
-            </article>
-          </div>
-          <section class="coursework" id="coursework">
-            <div class="section-heading">
-              <span class="section-number">02</span>
-              <div>
-                <p class="kicker">Selected coursework</p>
-                <h2>Selected coursework</h2>
-              </div>
-            </div>
-            <div class="coursework-grid">
-              <article class="coursework-card spotlight-card">
-                <h3>Core systems</h3>
-                <div class="course-list">
-                  <span>Software Engineering</span>
-                  <span>Processing Systems</span>
-                  <span>Databases</span>
-                  <span>Introduction to Computer Programming</span>
-                </div>
-              </article>
-              <article class="coursework-card spotlight-card">
-                <h3>Analytical foundations</h3>
-                <div class="course-list">
-                  <span>Probability</span>
-                  <span>Geometry &amp; Linear Algebra</span>
-                  <span>Calculus I</span>
-                  <span>Remote Sensing Systems &amp; Image Analysis</span>
-                </div>
-              </article>
-              <article class="coursework-card spotlight-card">
-                <h3>Engineering context</h3>
-                <div class="course-list">
-                  <span>Business Organization &amp; Management</span>
-                  <span>ECIU: Building Cities of the Future</span>
-                </div>
-              </article>
-            </div>
-          </section>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell projects section-pad">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <div>
+          <p class="kicker">Projects</p>
+          <h2>Published work &<br><em>the build roadmap.</em></h2>
         </div>
-      </section>
-      <section class="skills section-pad" id="skills">
-        <div class="section-shell">
-          <div class="section-heading section-heading-light">
-            <span class="section-number">03</span>
-            <div>
-              <p class="kicker">Skills</p>
-              <h2>Tools with a purpose.</h2>
-            </div>
-            <p class="section-aside">
-              Technologies used in my projects and coursework. AI/ML and
-              embedded development are ongoing learning areas.
-            </p>
-          </div>
-          <div class="skills-grid skills-grid-grouped">
-            <article class="skill-card skill-group spotlight-card">
-              <div class="skill-top">
-                <span class="skill-index">01</span
-                ><span>Server-side development</span>
-              </div>
-              <h3>Backend &amp; APIs</h3>
-              <p>
-                Structured backend applications, REST endpoints, authentication
-                flows, validation and tested service logic.
-              </p>
-              <div class="skill-tags">
-                <span>Java</span><span>Spring Boot</span><span>REST APIs</span
-                ><span>Spring Security</span><span>JWT</span><span>JUnit</span
-                ><span>Mockito</span>
-              </div>
-            </article>
-            <article class="skill-card skill-group spotlight-card">
-              <div class="skill-top">
-                <span class="skill-index">02</span><span>Persistence</span>
-              </div>
-              <h3>Databases &amp; Caching</h3>
-              <p>
-                Relational modelling, query design and connecting application
-                logic to persistent and cached data.
-              </p>
-              <div class="skill-tags">
-                <span>SQL</span><span>MySQL</span><span>Redis</span
-                ><span>JPA / Hibernate</span><span>Schema Design</span>
-              </div>
-            </article>
-            <article class="skill-card skill-group spotlight-card">
-              <div class="skill-top">
-                <span class="skill-index">03</span
-                ><span>Client-side development</span>
-              </div>
-              <h3>Frontend</h3>
-              <p>
-                Responsive interfaces that consume backend services and keep
-                application flows clear for users.
-              </p>
-              <div class="skill-tags">
-                <span>React</span><span>TypeScript</span><span>JavaScript</span
-                ><span>HTML</span><span>CSS</span>
-              </div>
-            </article>
-            <article class="skill-card skill-group spotlight-card">
-              <div class="skill-top">
-                <span class="skill-index">04</span
-                ><span>Workflow &amp; delivery</span>
-              </div>
-              <h3>Tools &amp; Infrastructure</h3>
-              <p>
-                Source control, API testing, containers and repeatable
-                development and deployment workflows.
-              </p>
-              <div class="skill-tags">
-                <span>Git</span><span>GitHub</span><span>Docker</span
-                ><span>Nginx</span><span>Postman</span
-                ><span>GitHub Actions</span>
-              </div>
-            </article>
-            <article
-              class="skill-card skill-group skill-group-wide spotlight-card"
-            >
-              <div class="skill-top">
-                <span class="skill-index">05</span
-                ><span>Programming &amp; foundations</span>
-              </div>
-              <h3>Languages &amp; Computer Science</h3>
-              <p>
-                Problem solving and core computing knowledge alongside project
-                work, with attention to what happens below the framework layer.
-              </p>
-              <div class="skill-tags">
-                <span>C++</span><span>Python</span
-                ><span>Data Structures &amp; Algorithms</span
-                ><span>Operating Systems</span><span>Computer Networks</span
-                ><span>Software Engineering</span>
-              </div>
-            </article>
-          </div>
+        <p class="section-aside">Existing repositories are separated clearly from future builds. No planned project is presented as finished work.</p>
+      </div>
+
+      <div class="project-subhead">
+        <span>Published repositories</span>
+        <span>06 projects</span>
+      </div>
+
+      <div class="published-project-grid">
+        <article class="published-project spotlight-card project-large">
+          <div class="project-card-top"><span>01</span><span class="repo-status">Published</span></div>
+          <h3>Synapse HEA Healthcare System</h3>
+          <p>A healthcare workflow platform exploring a Java and Spring Boot backend, React interface, role-based flows and database-backed application design.</p>
+          <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+          <a href="https://github.com/nomannn13/synapse-hea-healthcare-system" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="published-project spotlight-card">
+          <div class="project-card-top"><span>02</span><span class="repo-status">Published</span></div>
+          <h3>Krotoski Łódź Digital Twin</h3>
+          <p>A digital-twin and showroom-operations project using a modern React and TypeScript workflow to represent real business processes.</p>
+          <div class="project-tech"><span>React</span><span>TypeScript</span><span>Digital Twin</span></div>
+          <a href="https://github.com/nomannn13/tac-krotoski-lodz-digital-twin" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="published-project spotlight-card">
+          <div class="project-card-top"><span>03</span><span class="repo-status">Published</span></div>
+          <h3>Software Engineering University Project</h3>
+          <p>A team-based university software engineering project covering requirements, application flows, authentication and database-backed web development.</p>
+          <div class="project-tech"><span>JavaScript</span><span>Web</span><span>MySQL</span><span>Team Project</span></div>
+          <a href="https://github.com/nomannn13/SOFTWARE-ENGINEERING-UNIVERSITY-PROJECT" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="published-project spotlight-card">
+          <div class="project-card-top"><span>04</span><span class="repo-status">Published</span></div>
+          <h3>TaskPilot AI</h3>
+          <p>An AI-assisted task and productivity project used to explore practical application structure and intelligent workflow ideas.</p>
+          <div class="project-tech"><span>AI</span><span>Productivity</span><span>Application Design</span></div>
+          <a href="https://github.com/nomannn13/taskpilot-ai" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="published-project spotlight-card">
+          <div class="project-card-top"><span>05</span><span class="repo-status">Published</span></div>
+          <h3>Product Sales Tracker</h3>
+          <p>A compact Python automation project for recording, processing and reviewing product-sales information.</p>
+          <div class="project-tech"><span>Python</span><span>Automation</span><span>Data Handling</span></div>
+          <a href="https://github.com/nomannn13/product-sales-tracker" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="published-project spotlight-card">
+          <div class="project-card-top"><span>06</span><span class="repo-status">Phase work</span></div>
+          <h3>Synapse HEA: Java Phase 2</h3>
+          <p>A Java-focused continuation of the Synapse HEA work, separated as a development phase for backend learning and iteration.</p>
+          <div class="project-tech"><span>Java</span><span>Backend</span><span>Iteration</span></div>
+          <a href="https://github.com/nomannn13/synapse-hea-java-phase2" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+      </div>
+
+      <div class="roadmap-head">
+        <div>
+          <p class="kicker">Build roadmap</p>
+          <h3>Target: before January 2027</h3>
         </div>
-      </section>
-      <section class="section-shell about section-pad" id="about">
-        <div class="section-heading">
-          <span class="section-number">04</span>
-          <div>
-            <p class="kicker">About</p>
-            <h2>Curious about systems.<br /><em>Grounded in people.</em></h2>
-          </div>
-        </div>
-        <div class="about-grid">
-          <article class="about-main spotlight-card reveal-card">
-            <p class="large-copy">
-              I enjoy understanding how the pieces of a system fit together,
-              then turning that understanding into working software.
-            </p>
-            <p>
-              My engineering degree brings together computing, communications
-              and electronics. International projects and residence
-              representation have also taught me to listen, collaborate and
-              explain technical decisions clearly.
-            </p>
-            <div
-              aria-label="Nomaan Munshi signature"
-              class="about-signature"
-              role="img"
-            ></div>
-          </article>
-        </div>
-      </section>
-      <section class="section-shell credentials section-pad" id="credentials">
-        <div class="section-heading">
+        <p>Personal targets may move around university exams. They are shown as plans, not completed achievements.</p>
+      </div>
+
+      <div class="build-roadmap">
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">Course build</span>
+          <h4>Streamly</h4>
+          <p>An Engineering Digest course project for practising application structure, backend flows and end-to-end implementation.</p>
+          <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>Web</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">Started</span>
+          <h4>URL Shortener</h4>
+          <p>A compact backend build covering URL mapping, redirects, persistence, validation and API design.</p>
+          <div class="project-tech"><span>Spring Boot</span><span>REST</span><span>SQL</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">Started</span>
+          <h4>ZipCart</h4>
+          <p>An Engineering Digest course project for strengthening practical full-stack and backend implementation.</p>
+          <div class="project-tech"><span>Java</span><span>Spring</span><span>Web</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card roadmap-accent">
+          <span class="roadmap-date">September 2026</span>
+          <h4>Payment Orchestration Platform</h4>
+          <p>Payment intents, transaction ledgers, retries, webhooks, idempotency, reconciliation and resilient failure handling.</p>
+          <div class="project-tech"><span>Spring Boot</span><span>Kafka</span><span>Webhooks</span><span>Resilience4j</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">Q4 2026</span>
+          <h4>Student AI Chat Platform</h4>
+          <p>Streaming conversations, document retrieval, RAG and a clear student-oriented workflow.</p>
+          <div class="project-tech"><span>Spring AI</span><span>SSE</span><span>RAG</span><span>Vector DB</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">Q4 2026</span>
+          <h4>Real-Time Messaging Platform</h4>
+          <p>One-to-one and group messaging, presence, delivery receipts and real-time communication flows.</p>
+          <div class="project-tech"><span>WebSocket</span><span>Redis</span><span>Kafka</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">By Jan 2027</span>
+          <h4>Ticket Booking Platform</h4>
+          <p>Event discovery, seat inventory, booking locks, payments and concurrency-aware reservation flows.</p>
+          <div class="project-tech"><span>Spring Boot</span><span>Redis Locks</span><span>Payments</span><span>Concurrency</span></div>
+        </article>
+
+        <article class="roadmap-card spotlight-card">
+          <span class="roadmap-date">By Jan 2027</span>
+          <h4>Cloud Storage Platform</h4>
+          <p>File upload, folder hierarchy, sharing permissions, versioning, indexing and search-ready storage workflows.</p>
+          <div class="project-tech"><span>Spring Boot</span><span>Storage</span><span>ACL</span><span>Search</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey" class="journey section-pad">
+      <div class="section-shell">
+        <div class="section-heading section-heading-light">
           <span class="section-number">05</span>
           <div>
-            <p class="kicker">Selected documents</p>
-            <h2>Supporting documents.</h2>
+            <p class="kicker">Journey</p>
+            <h2>Where I am now,<br><em>without pretending I’m finished.</em></h2>
           </div>
-          <p class="section-aside">
-            Design documentation, a professional recommendation and my CV.
-          </p>
         </div>
-        <div class="credentials-grid">
-          <article
-            class="credential-card credential-card-featured spotlight-card"
-          >
-            <span class="credential-label">Project planning &amp; design</span>
-            <h3>Synapse HEA<br />Phase 2 documentation</h3>
-            <p>
-              My consolidated D1, D2 and D3 planning and design record for the
-              independent Java full-stack rebuild - covering requirements, use
-              cases, architecture, security, database design, APIs, testing,
-              CI/CD and deployment.
-            </p>
-            <div class="credential-actions">
-              <a
-                class="button button-primary"
-                href="assets/Synapse_HEA_Phase_2_Engineering_Documentation.pdf"
-                rel="noreferrer"
-                target="_blank"
-                >Open documentation ↗</a
-              >
-              <a
-                class="button button-secondary"
-                download="Synapse_HEA_Phase_2_Engineering_Documentation.pdf"
-                href="assets/Synapse_HEA_Phase_2_Engineering_Documentation.pdf"
-                >Download PDF</a
-              >
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024 - present</div>
+            <div class="timeline-content">
+              <h3>University of Trento</h3>
+              <p>Bachelor’s degree in Information and Communications Engineering.</p>
             </div>
+            <div class="timeline-tag">Education</div>
           </article>
-          <article class="credential-card spotlight-card">
-            <span class="credential-label">Curriculum vitae</span>
-            <h3>General CV</h3>
-            <p>
-              Education, technical skills, selected software projects,
-              international experience and student leadership.
-            </p>
-            <div class="credential-actions">
-              <a
-                class="button button-primary"
-                href="assets/Nomaan_Munshi_CV.pdf"
-                rel="noreferrer"
-                target="_blank"
-                >Open CV ↗</a
-              >
-              <a
-                class="button button-secondary"
-                download="Nomaan_Munshi_CV.pdf"
-                href="assets/Nomaan_Munshi_CV.pdf"
-                >Download PDF</a
-              >
+
+          <article class="timeline-item">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3>Backend engineering foundation</h3>
+              <p>Deepening Java, Spring Boot, SQL, testing and practical application design.</p>
             </div>
+            <div class="timeline-tag">Focus</div>
           </article>
-          <article class="credential-card spotlight-card">
-            <span class="credential-label"
-              >Professional reference · Original</span
-            >
-            <h3>Grupa Krotoski recommendation</h3>
-            <p>
-              Signed recommendation from Sylwia Mikołajczyk, Director of Human
-              Resources at Grupa Krotoski, following the international ESG
-              venture challenge.
-            </p>
-            <div class="credential-actions">
-              <a
-                class="button button-primary"
-                href="assets/Grupa_Krotoski_Recommendation.pdf"
-                rel="noreferrer"
-                target="_blank"
-                >Open recommendation ↗</a
-              >
-              <a
-                class="button button-secondary"
-                download="Grupa_Krotoski_Recommendation.pdf"
-                href="assets/Grupa_Krotoski_Recommendation.pdf"
-                >Download PDF</a
-              >
+
+          <article class="timeline-item">
+            <div class="timeline-date">Current</div>
+            <div class="timeline-content">
+              <h3>Problem solving in C++</h3>
+              <p>Building DSA consistency while strengthening operating systems, networking and databases.</p>
             </div>
+            <div class="timeline-tag">Practice</div>
           </article>
         </div>
-      </section>
-      <section class="section-shell contact section-pad" id="contact">
-        <div class="contact-panel">
-          <p class="kicker">Contact</p>
-          <h2>Let’s make a connection.</h2>
-          <p class="contact-copy">
-            For project conversations, technical collaboration or opportunities,
-            get in touch.
-          </p>
-          <div class="contact-actions">
-            <a
-              class="button button-primary magnetic"
-              href="mailto:nomaanmunshii@gmail.com"
-              >Email me ↗</a
-            >
-            <a
-              class="button button-secondary magnetic"
-              href="https://github.com/nomaanmunshi"
-              rel="noreferrer"
-              target="_blank"
-              >GitHub</a
-            >
-            <a
-              class="button button-secondary"
-              href="https://www.linkedin.com/in/nomaan-munshi-b92927333"
-              rel="noreferrer"
-              target="_blank"
-              >LinkedIn ↗</a
-            >
-          </div>
-          <div class="contact-email">nomaanmunshii@gmail.com</div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell contact section-pad">
+      <div class="contact-panel">
+        <p class="kicker">Contact</p>
+        <h2>Have a serious opportunity<br>or a useful conversation?</h2>
+        <p class="contact-copy">
+          For software engineering projects, technical collaboration or a thoughtful conversation,
+          reach me directly.
+        </p>
+        <div class="contact-actions">
+          <a class="button button-primary magnetic" href="mailto:nomaanmunshii@gmail.com">Email me ↗</a>
+          <a class="button button-secondary magnetic" href="https://github.com/nomannn13" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-      </section>
-    </main>
-    <footer class="site-footer section-shell">
-      <span>© <span id="year"></span> Nomaan Munshi</span>
-      <span>Built with care. Kept simple.</span>
-      <a href="#top">Back to top ↑</a>
-    </footer>
-    <script defer="" src="script.js"></script>
-  </body>
+        <div class="contact-email">nomaanmunshii@gmail.com</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <span>© <span id="year"></span> Nomaan Munshi</span>
+    <span>Designed for clarity, not hype.</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="portfolio-upgrade.js?v=20260817-1"></script>
+</body>
 </html>
