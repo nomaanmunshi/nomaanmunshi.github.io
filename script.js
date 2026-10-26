@@ -1,248 +1,92 @@
 (() => {
-  const html = document.documentElement;
-  const body = document.body;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Theme
-  const themeToggle = document.querySelector(".theme-toggle");
-  const themeLabel = document.querySelector(".theme-label");
-  const savedTheme = localStorage.getItem("nomaan-theme");
-  const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-  const initialTheme = savedTheme || preferredTheme;
-  html.dataset.theme = initialTheme;
-  updateThemeLabel();
-
-  themeToggle?.addEventListener("click", () => {
-    html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("nomaan-theme", html.dataset.theme);
-    updateThemeLabel();
-  });
-
-  function updateThemeLabel() {
-    if (!themeLabel) return;
-    themeLabel.textContent = html.dataset.theme === "dark" ? "Light" : "Dark";
+  "use strict";
+  const root = document.documentElement;
+  const toggle = document.querySelector(".theme-toggle");
+  const system = matchMedia("(prefers-color-scheme: dark)");
+  let explicit = false;
+  try {
+    explicit = ["dark", "light"].includes(localStorage.getItem("nomaan-theme"));
+  } catch {}
+  function apply(theme) {
+    root.dataset.theme = theme;
+    const dark = theme === "dark";
+    toggle.querySelector(".theme-label").textContent = dark ? "Light" : "Dark";
+    toggle.setAttribute(
+      "aria-label",
+      `Switch to ${dark ? "light" : "dark"} mode`,
+    );
+    toggle.setAttribute("aria-pressed", String(dark));
+    document.querySelector('meta[name="theme-color"]').content = dark
+      ? "#191B1D"
+      : "#F7F5F0";
   }
-
-  // Mobile menu
+  apply(root.dataset.theme);
+  toggle.addEventListener("click", () => {
+    explicit = true;
+    apply(root.dataset.theme === "dark" ? "light" : "dark");
+    try {
+      localStorage.setItem("nomaan-theme", root.dataset.theme);
+    } catch {}
+  });
+  system.addEventListener("change", (event) => {
+    if (!explicit) apply(event.matches ? "dark" : "light");
+  });
+  const menu = document.querySelector(".mobile-menu");
   const menuToggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-  function closeMenu() {
-    body.classList.remove("menu-open");
-    mobileMenu?.classList.remove("is-open");
-    mobileMenu?.setAttribute("aria-hidden", "true");
-    menuToggle?.setAttribute("aria-expanded", "false");
-  }
-
-  menuToggle?.addEventListener("click", () => {
-    const open = !mobileMenu.classList.contains("is-open");
-    mobileMenu.classList.toggle("is-open", open);
-    body.classList.toggle("menu-open", open);
-    mobileMenu.setAttribute("aria-hidden", String(!open));
+  function setMenu(open, restoreFocus = false) {
+    menu.hidden = !open;
+    menu.setAttribute("aria-hidden", String(!open));
     menuToggle.setAttribute("aria-expanded", String(open));
-  });
-  mobileLinks.forEach(link => link.addEventListener("click", closeMenu));
-
-  // Header state
-  const header = document.querySelector(".site-header");
-  window.addEventListener("scroll", () => {
-    header?.classList.toggle("is-scrolled", window.scrollY > 24);
-  }, { passive: true });
-
-  // Real photo fallback
-  const photo = document.querySelector(".profile-photo");
-  photo?.addEventListener("error", () => {
-    photo.style.display = "none";
-  });
-
-  // Spotlight / torch interaction
-  document.querySelectorAll(".spotlight-card").forEach(card => {
-    card.addEventListener("pointermove", event => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
-      card.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
-    });
-  });
-
-  // Magnetic hover
-  if (window.matchMedia("(pointer: fine)").matches && !reduceMotion) {
-    document.querySelectorAll(".magnetic").forEach(item => {
-      item.addEventListener("mousemove", event => {
-        const rect = item.getBoundingClientRect();
-        const x = event.clientX - rect.left - rect.width / 2;
-        const y = event.clientY - rect.top - rect.height / 2;
-        item.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
-      });
-      item.addEventListener("mouseleave", () => {
-        item.style.transform = "translate(0, 0)";
-      });
-    });
+    menuToggle.setAttribute(
+      "aria-label",
+      open ? "Close navigation" : "Open navigation",
+    );
+    if (restoreFocus) menuToggle.focus();
   }
-
-  // Lenis + GSAP
-  if (!reduceMotion && window.Lenis && window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-      duration: 1.15,
-      smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.15
-    });
-    window.nomaanLenis = lenis;
-
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add(time => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
-
-    const titleLines = document.querySelectorAll(".title-line");
-    gsap.from(titleLines, {
-      yPercent: 115,
-      opacity: 0,
-      duration: 1.15,
-      stagger: 0.11,
-      ease: "power4.out",
-      delay: 0.15
-    });
-
-    gsap.from(".hero .reveal", {
-      y: 28,
-      opacity: 0,
-      duration: 0.85,
-      stagger: 0.12,
-      ease: "power3.out",
-      delay: 0.42
-    });
-
-    gsap.from(".portrait-frame", {
-      y: 60,
-      rotation: 6,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power4.out",
-      delay: 0.25
-    });
-
-    gsap.from(".floating-note", {
-      scale: .88,
-      opacity: 0,
-      duration: .8,
-      stagger: .15,
-      ease: "back.out(1.4)",
-      delay: .8
-    });
-
-    gsap.utils.toArray(".section-heading").forEach(heading => {
-      gsap.from(heading.children, {
-        scrollTrigger: { trigger: heading, start: "top 82%" },
-        y: 45,
-        opacity: 0,
-        duration: .9,
-        stagger: .08,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.from(".reveal-card", {
-      scrollTrigger: { trigger: ".about-grid", start: "top 78%" },
-      y: 60,
-      opacity: 0,
-      duration: .85,
-      stagger: .1,
-      ease: "power3.out"
-    });
-
-    gsap.utils.toArray(".skill-card").forEach((card, index) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 88%" },
-        y: 45,
-        opacity: 0,
-        duration: .72,
-        delay: (index % 4) * .04,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.utils.toArray(".coursework-card").forEach((card, index) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 88%" },
-        y: 45,
-        opacity: 0,
-        duration: .75,
-        delay: (index % 3) * .05,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.utils.toArray(".published-project, .roadmap-card").forEach((card, index) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 90%" },
-        y: 38,
-        opacity: 0,
-        duration: .7,
-        delay: (index % 3) * .04,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.utils.toArray(".project-row").forEach(row => {
-      gsap.from(row.children, {
-        scrollTrigger: { trigger: row, start: "top 80%" },
-        y: 40,
-        opacity: 0,
-        duration: .85,
-        stagger: .08,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.utils.toArray(".project-art").forEach(art => {
-      gsap.to(art, {
-        y: -35,
-        ease: "none",
-        scrollTrigger: {
-          trigger: art,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.2
-        }
-      });
-    });
-
-    gsap.utils.toArray(".timeline-item").forEach(item => {
-      gsap.from(item, {
-        scrollTrigger: { trigger: item, start: "top 88%" },
-        x: -24,
-        opacity: 0,
-        duration: .75,
-        ease: "power3.out"
-      });
-    });
-
-    gsap.from(".contact-panel", {
-      scrollTrigger: { trigger: ".contact-panel", start: "top 82%" },
-      y: 70,
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out"
-    });
-  }
-
+  menuToggle.addEventListener("click", () => setMenu(menu.hidden));
+  menu
+    .querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !menu.hidden) setMenu(false, true);
+  });
+  document.addEventListener("click", (event) => {
+    if (
+      !menu.hidden &&
+      !menu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    )
+      setMenu(false);
+  });
+  document.addEventListener("focusin", (event) => {
+    if (
+      !menu.hidden &&
+      !menu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    )
+      setMenu(false);
+  });
+  matchMedia("(min-width:701px)").addEventListener("change", (event) => {
+    if (event.matches) setMenu(false);
+  });
   document.getElementById("year").textContent = new Date().getFullYear();
-})();
-
-(() => {
-  const ordanis = document.createElement("script");
-  ordanis.src = "ordanis-project.js?v=20260805-1";
-  ordanis.async = false;
-
-  ordanis.addEventListener("load", () => {
-    const enhancements = document.createElement("script");
-    enhancements.src = "portfolio-enhancements.js?v=20260803-5";
-    enhancements.async = false;
-    document.body.appendChild(enhancements);
-  });
-
-  document.body.appendChild(ordanis);
+  if ("IntersectionObserver" in window) {
+    const links = [...document.querySelectorAll(".desktop-nav a")];
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          links.forEach((link) => {
+            if (link.hash === "#" + entry.target.id)
+              link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        }),
+      { rootMargin: "-15% 0px -60% 0px" },
+    );
+    links.forEach((link) => {
+      const section = document.querySelector(link.hash);
+      if (section) observer.observe(section);
+    });
+  }
 })();
