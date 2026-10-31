@@ -139,7 +139,7 @@
       const strong = priorityCard.querySelector("strong");
       const detail = priorityCard.querySelector(":scope > span:last-child");
       if (strong) strong.textContent = "Java · Spring · C++ DSA · Python";
-      if (detail) detail.textContent = "Adding AI/ML fundamentals alongside core software engineering";
+      if (detail) detail.textContent = "Software engineering first; exploring embedded systems, electronics and AI/ML";
     }
 
     const foundationTags = document.querySelector(".skill-group-wide .skill-tags");
@@ -148,12 +148,16 @@
       learning.className = "learning-tag";
       learning.textContent = "Learning: AI/ML fundamentals";
       foundationTags.appendChild(learning);
+      const embedded = document.createElement("span");
+      embedded.className = "learning-tag";
+      embedded.textContent = "Learning: Embedded C · STM32 · Electronics";
+      foundationTags.appendChild(embedded);
     }
 
     const meta = document.querySelector(".hero-meta");
     if (meta && !Array.from(meta.children).some(item => item.textContent.includes("AI/ML"))) {
       const item = document.createElement("span");
-      item.textContent = "AI/ML fundamentals";
+      item.textContent = "Exploring embedded systems & AI/ML";
       meta.appendChild(item);
     }
   }
@@ -214,6 +218,14 @@
           <p>Represent residents of the San Bartolomeo university residence, communicate shared concerns and coordinate with housing management on community and facility matters.</p>
         </div>
         <div class="timeline-tag">Leadership</div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-date">Currently learning</div>
+        <div class="timeline-content">
+          <h3>Broadening my engineering foundations</h3>
+          <p>Keeping software engineering at the centre while exploring embedded programming, microcontrollers and electronics, alongside Python and AI/ML fundamentals.</p>
+        </div>
+        <div class="timeline-tag">Independent study</div>
       </article>
     `;
   }

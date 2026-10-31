@@ -1,11 +1,4 @@
-/* Stronger existing circuit lines; preserve their geometry and pointer behaviour. */
-.system-motif { opacity: .18; }
-.system-motif--hero { opacity: .20; }
-.system-motif--projects { opacity: .20; }
-.system-motif--coursework, .system-motif--journey { opacity: .16; }
-.system-motif--contact { opacity: .10; }
-html[data-theme="light"] .system-motif { opacity: .23; color: #526b37; }
-
+/* Routine widget; background motifs use their original portfolio-upgrade.css styling. */
 .routine { position: relative; width: fit-content; max-width: 100%; margin-bottom: 26px; color: var(--text); }
 .routine-pill { list-style: none; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 9px; border: 1px solid var(--line-strong); border-radius: 24px; background: var(--surface); cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,.06); }
 .routine-pill::-webkit-details-marker { display: none; }

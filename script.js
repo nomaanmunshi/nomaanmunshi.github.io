@@ -239,7 +239,7 @@
 
   ordanis.addEventListener("load", () => {
     const enhancements = document.createElement("script");
-    enhancements.src = "portfolio-enhancements.js?v=20260803-5";
+    enhancements.src = "portfolio-enhancements.js?v=20261101-2";
     enhancements.async = false;
     document.body.appendChild(enhancements);
   });
