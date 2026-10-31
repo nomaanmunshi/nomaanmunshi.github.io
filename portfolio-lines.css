@@ -1,0 +1,7 @@
+/* Visible in open space, quiet behind content. */
+.system-motif { opacity: .14; }
+.system-motif--hero, .system-motif--projects { opacity: .16; }
+.system-motif--contact { opacity: .08; }
+html[data-theme="light"] .system-motif { opacity: .18; }
+/* Keep the original subtle appearance until the content masks are ready. */
+html .system-motif:not([data-content-mask]) { opacity: .055; }
