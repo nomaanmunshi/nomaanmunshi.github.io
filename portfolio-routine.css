@@ -1,0 +1,31 @@
+/* Stronger existing circuit lines; preserve their geometry and pointer behaviour. */
+.system-motif { opacity: .18; }
+.system-motif--hero { opacity: .20; }
+.system-motif--projects { opacity: .20; }
+.system-motif--coursework, .system-motif--journey { opacity: .16; }
+.system-motif--contact { opacity: .10; }
+html[data-theme="light"] .system-motif { opacity: .23; color: #526b37; }
+
+.routine { position: relative; width: fit-content; max-width: 100%; margin-bottom: 26px; color: var(--text); }
+.routine-pill { list-style: none; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 9px; border: 1px solid var(--line-strong); border-radius: 24px; background: var(--surface); cursor: pointer; box-shadow: 0 6px 22px rgba(0,0,0,.06); }
+.routine-pill::-webkit-details-marker { display: none; }
+.routine-pill:hover { border-color: var(--accent); }
+.routine-pill:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.routine-copy { display: grid; gap: 2px; min-width: 0; }
+.routine-caption { color: var(--muted); font-size: 10px; line-height: 1.4; letter-spacing: .025em; }
+.routine-label { font-size: 12px; font-weight: 500; line-height: 1.45; }
+.routine-info { color: var(--muted); font-size: 13px; margin-left: 4px; }
+.routine-bot { position: relative; display: block; flex: 0 0 42px; width: 42px; height: 44px; color: var(--accent); }
+.routine-bot svg { width: 40px; height: 40px; animation: routine-bob 4s ease-in-out infinite; }
+.routine-prop { position: absolute; right: -2px; bottom: -1px; color: var(--orange); font-size: 15px; line-height: 1; }
+.routine-sleep-eyes { display: none; }
+.routine[data-state="sleep"] .routine-eyes { display: none; }
+.routine[data-state="sleep"] .routine-sleep-eyes { display: block; }
+.routine[data-state="sleep"] .routine-prop { animation: routine-drift 4s ease-in-out infinite; }
+.routine[data-state="gym"] .routine-bot svg { animation-duration: 1.3s; }
+.routine-details { margin-top: 9px; max-width: 330px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); font-size: 11px; line-height: 1.7; color: var(--muted); }
+.routine-details a { display: block; margin-top: 7px; color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+@keyframes routine-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-2px) rotate(2deg); } }
+@keyframes routine-drift { 0%,100% { transform: translateY(0); opacity: .65; } 50% { transform: translateY(-4px); opacity: 1; } }
+@media(max-width: 560px) { .routine { margin-bottom: 22px; } .routine-pill { gap: 8px; padding-right: 12px; } .routine-label { font-size: 11px; } .routine-caption { font-size: 9px; } }
+@media(prefers-reduced-motion: reduce) { .routine-bot svg, .routine-prop { animation: none !important; } }
